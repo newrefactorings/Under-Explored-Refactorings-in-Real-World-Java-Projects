@@ -26,6 +26,19 @@
             color: #fff;
             padding: 1em 0;
             text-align: center;
+            position: relative;
+        }
+        header .home-link {
+            position: absolute;
+            top: 50%;
+            left: 1em;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        header .home-link:hover {
+            color: #ddd;
         }
         nav {
             grid-area: nav;
@@ -34,22 +47,10 @@
             height: calc(100vh - 8em); /* Adjusted for header and footer height */
             box-sizing: border-box;
             overflow-y: auto; /* Added for scrollable menu */
-            position: relative;
-        }
-        nav .home-link {
-            position: absolute;
-            top: 1em;
-            left: 1em;
-            color: #fff;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
-        nav .home-link:hover {
-            color: #ddd;
         }
         nav ul {
             list-style-type: none;
-            margin: 2.5em 0 0 0; /* Adjusted for icon space */
+            margin: 0;
             padding: 0;
         }
         nav ul li {
@@ -97,19 +98,19 @@
             nav {
                 height: auto;
             }
-            nav .home-link {
+            header .home-link {
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
         <h1>Merge Conditions Refactoring</h1>
     </header>
     <nav>
-        <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
         <ul>
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#remove">Remove Refactorings</a></li>
