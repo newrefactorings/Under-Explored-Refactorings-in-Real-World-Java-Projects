@@ -123,19 +123,38 @@
     <main>
         <p>Merge Conditions refactoring is a technique used to simplify complex conditional logic in your code. By combining multiple conditions into a single, more understandable condition, you can make your code easier to read and maintain. This can be particularly useful when you have several conditions that result in the same action being taken.</p>
         <h2>Example</h2>
-        <p>Consider the following code:</p>
+        <p>Before refactoring:</p>
         <pre>
-if (isWinter() && isWeekend()) {
-    // do something
-}
-if (isWinter() && isHoliday()) {
-    // do the same thing
+public class A {
+    public boolean isEligible(int age, boolean isCitizen) {
+        boolean eligible = false;
+        if (age >= 18) {
+            if (isCitizen) {
+                eligible = true;
+            } else {
+                if (isCitizen) {
+                    eligible = false;
+                } else {
+                    eligible = true;
+                }
+            }
+        } else {
+            eligible = false;
+        }
+        return eligible;
+    }
 }
         </pre>
-        <p>Using Merge Conditions refactoring, you can simplify this to:</p>
+        <p>After refactoring:</p>
         <pre>
-if (isWinter() && (isWeekend() || isHoliday())) {
-    // do something
+public class A {
+    public boolean isEligible(int age, boolean isCitizen) {
+        if (age >= 18) {
+            return isCitizen;
+        } else {
+            return false;
+        }
+    }
 }
         </pre>
         <p>This reduces redundancy and makes the code easier to understand.</p>
