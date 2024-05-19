@@ -3,6 +3,7 @@
 <head>
     <title>Emerging Refactorings</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Lato', sans-serif;
@@ -12,10 +13,11 @@
             color: #333;
             display: grid;
             grid-template-columns: 200px 1fr;
-            grid-template-rows: auto 1fr;
+            grid-template-rows: auto 1fr auto;
             grid-template-areas:
                 "header header"
-                "nav main";
+                "nav main"
+                "footer footer";
             height: 100vh;
         }
         header {
@@ -24,12 +26,25 @@
             color: #fff;
             padding: 1em 0;
             text-align: center;
+            position: relative;
+        }
+        header .home-link {
+            position: absolute;
+            top: 50%;
+            left: 1em;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        header .home-link:hover {
+            color: #ddd;
         }
         nav {
             grid-area: nav;
             background-color: #444;
             padding: 1em;
-            height: calc(100vh - 4em); /* Adjusted for header height */
+            height: calc(100vh - 8em); /* Adjusted for header and footer height */
             box-sizing: border-box;
             overflow-y: auto; /* Added for scrollable menu */
         }
@@ -62,24 +77,37 @@
         p {
             text-align: justify;
         }
+        footer {
+            grid-area: footer;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
         /* Responsive design for smaller screens */
         @media (max-width: 600px) {
             body {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto auto 1fr;
+                grid-template-rows: auto auto 1fr auto;
                 grid-template-areas:
                     "header"
                     "nav"
-                    "main";
+                    "main"
+                    "footer";
             }
             nav {
                 height: auto;
+            }
+            header .home-link {
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
         <h1>Emerging Refactorings</h1>
     </header>
     <nav>
@@ -118,5 +146,8 @@
             <p>Addition refactorings involve adding new functionality to the existing codebase. This might include introducing new classes, methods, or components to enhance the system without altering its existing behavior. The goal is to extend the system's capabilities in a way that is maintainable and follows good design principles.</p>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2024 Emerging Refactorings</p>
+    </footer>
 </body>
 </html>
