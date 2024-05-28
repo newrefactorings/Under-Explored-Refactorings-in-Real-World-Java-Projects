@@ -94,12 +94,19 @@
         /* Styles for the refactoring list */
         .refactorings-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             list-style-type: disc; /* Use bullets */
             padding: 0;
         }
         .refactorings-list li {
             margin-bottom: 0.5em; /* Add some space between items */
+        }
+        /* Two-column layout for lists with 6 or more items */
+        .refactorings-list:has(> li:nth-child(n+6)) {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        /* Single-column layout for lists with less than 6 items */
+        .refactorings-list:not(:has(> li:nth-child(n+6))) {
+            grid-template-columns: 1fr;
         }
         /* Responsive design for smaller screens */
         @media (max-width: 600px) {
