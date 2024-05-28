@@ -91,22 +91,33 @@
             text-align: center;
             padding: 1em 0;
         }
-        /* Flexbox layout for rename refactorings */
+        /* Styles for the refactoring list */
         .refactorings-list {
             display: flex;
             flex-wrap: wrap;
             gap: 1em;
         }
         .refactorings-list div {
-            background-color: #eee;
+            background-color: #fff;
             padding: 1em;
+            border: 1px solid #ddd;
             border-radius: 5px;
             flex: 1 1 calc(33% - 1em); /* Three items per row */
             box-sizing: border-box;
-            text-align: center;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
         }
         .refactorings-list div:hover {
-            background-color: #ddd;
+            background-color: #f9f9f9;
+        }
+        .refactoring-title {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+        .refactoring-description {
+            font-size: 0.9em;
+            color: #666;
         }
         /* Responsive design for smaller screens */
         @media (max-width: 600px) {
@@ -155,13 +166,34 @@
             <h2>Rename Refactorings</h2>
             <p>Rename refactorings are changes made to the names of variables, methods, classes, or other entities in the code to improve readability, clarity, and maintainability without altering the functionality. Proper naming is crucial for understanding and maintaining the code.</p>
             <div class="refactorings-list">
-                <div>Rename Class</div>
-                <div>Rename Constants</div>
-                <div>Rename Field</div>
-                <div>Rename Method</div>
-                <div>Rename Package</div>
-                <div>Rename Parameter</div>
-                <div>Rename Variable</div>
+                <div>
+                    <div class="refactoring-title">Rename Class</div>
+                    <div class="refactoring-description">Change the name of a class to better reflect its responsibilities.</div>
+                </div>
+                <div>
+                    <div class="refactoring-title">Rename Constants</div>
+                    <div class="refactoring-description">Change the names of constants to be more descriptive and meaningful.</div>
+                </div>
+                <div>
+                    <div class="refactoring-title">Rename Field</div>
+                    <div class="refactoring-description">Change the name of a field to better describe its purpose.</div>
+                </div>
+                <div>
+                    <div class="refactoring-title">Rename Method</div>
+                    <div class="refactoring-description">Change the name of a method to better describe its functionality.</div>
+                </div>
+                <div>
+                    <div class="refactoring-title">Rename Package</div>
+                    <div class="refactoring-description">Change the name of a package to better organize related classes.</div>
+                </div>
+                <div>
+                    <div class="refactoring-title">Rename Parameter</div>
+                    <div class="refactoring-description">Change the name of a parameter to make its purpose clearer.</div>
+                </div>
+                <div>
+                    <div class="refactoring-title">Rename Variable</div>
+                    <div class="refactoring-description">Change the name of a variable to make its purpose clearer.</div>
+                </div>
             </div>
         </section>
         <section id="split">
@@ -177,7 +209,7 @@
             <p>Modification refactorings involve changing the structure of existing code without changing its external behavior. This helps make the code more readable, flexible, and easier to maintain.</p>
         </section>
         <section id="addition">
-            <h2>Addition Refactorings</h<|meta_end|>2>
+            <h2>Addition Refactorings</h2>
             <p>Addition refactorings involve adding new functionality to the existing codebase. This might include introducing new classes, methods, or components to enhance the system without altering its existing behavior. The goal is to extend the system's capabilities in a way that is maintainable and follows good design principles.</p>
         </section>
         <section id="extract">
@@ -194,11 +226,4 @@
         </section>
         <section id="move">
             <h2>Move Refactorings</h2>
-            <p>mmmmmmmmmm</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
-    </footer>
-</body>
-</html>
+            <p>mmmmmmmmmm
