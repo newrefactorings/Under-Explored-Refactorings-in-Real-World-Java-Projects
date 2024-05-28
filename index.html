@@ -91,6 +91,23 @@
             text-align: center;
             padding: 1em 0;
         }
+        /* Flexbox layout for rename refactorings */
+        .refactorings-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .refactorings-list div {
+            background-color: #eee;
+            padding: 1em;
+            border-radius: 5px;
+            flex: 1 1 calc(33% - 1em); /* Three items per row */
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .refactorings-list div:hover {
+            background-color: #ddd;
+        }
         /* Responsive design for smaller screens */
         @media (max-width: 600px) {
             body {
@@ -108,6 +125,9 @@
             header .home-link {
                 left: 50%;
                 transform: translate(-50%, -50%);
+            }
+            .refactorings-list div {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -133,11 +153,18 @@
     <main>
         <section id="rename">
             <h2>Rename Refactorings</h2>
-            <p>Rename refactorings are changes made to the names of variables, methods, classes, or other entities in the code to improve readability, clarity, and maintainability without altering the functionality. Proper naming is crucial for understanding and maintaining the code.In our study we discover the 
-                following refactorings related to Rename: Rename class, Rename constants, Rename field, Rename method, Rename package, Rename parameter, Rename parameter
-            </p>
+            <p>Rename refactorings are changes made to the names of variables, methods, classes, or other entities in the code to improve readability, clarity, and maintainability without altering the functionality. Proper naming is crucial for understanding and maintaining the code.</p>
+            <div class="refactorings-list">
+                <div>Rename Class</div>
+                <div>Rename Constants</div>
+                <div>Rename Field</div>
+                <div>Rename Method</div>
+                <div>Rename Package</div>
+                <div>Rename Parameter</div>
+                <div>Rename Variable</div>
+            </div>
         </section>
-         <section id="split">
+        <section id="split">
             <h2>Split Refactorings</h2>
             <p>Split refactorings involve breaking up larger elements into smaller, more manageable pieces. This helps improve code organization and adheres to the Single Responsibility Principle.</p>
         </section>
@@ -149,25 +176,26 @@
             <h2>Modification Refactorings</h2>
             <p>Modification refactorings involve changing the structure of existing code without changing its external behavior. This helps make the code more readable, flexible, and easier to maintain.</p>
         </section>
-         <section id="addition">
-            <h2>Addition Refactorings</h2>
+        <section id="addition">
+            <h2>Addition Refactorings</h<|meta_end|>2>
             <p>Addition refactorings involve adding new functionality to the existing codebase. This might include introducing new classes, methods, or components to enhance the system without altering its existing behavior. The goal is to extend the system's capabilities in a way that is maintainable and follows good design principles.</p>
         </section>
-         <section id="extract">
-             <h2>Extract Refactorings</h2>
-          mmmmmmmmmmmmmm 
+        <section id="extract">
+            <h2>Extract Refactorings</h2>
+            <p>mmmmmmmmmmmmmmm</p>
         </section>
         <section id="remove">
             <h2>Remove Refactorings</h2>
             <p>Remove refactorings involve eliminating unnecessary code to simplify the codebase. This can help reduce complexity, improve readability, and make the code easier to maintain.</p>
-        </section>        
+        </section>
         <section id="merge">
             <h2>Merge Refactorings</h2>
             <p>Merge refactorings involve combining multiple elements in the codebase that have similar responsibilities or behavior. This helps reduce redundancy and improves code maintainability. For example, <a href="merge_conditions.html">Merge Conditions</a> refactoring.</p>
-        </section>  
-         <section id="move">
+        </section>
+        <section id="move">
             <h2>Move Refactorings</h2>
-            mmmmmmmmmm       
+            <p>mmmmmmmmmm</p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Emerging Refactorings</p>
