@@ -93,18 +93,15 @@
         }
         /* Styles for the refactoring list */
         .refactorings-list {
-            display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            gap: 0.5em; /* Use gap to control spacing between items */
+            list-style-type: none;
+            padding: 0;
         }
-        .refactoring-item {
-            flex: 1 1 calc(33.33% - 1em); /* Adjust width for minimal horizontal space */
-            margin: 0; /* Remove margin */
-            text-align: left;
+        .refactorings-list li {
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5em;
         }
         /* Responsive design for smaller screens */
         @media (max-width: 600px) {
@@ -123,15 +120,6 @@
             header .home-link {
                 left: 50%;
                 transform: translate(-50%, -50%);
-            }
-            .refactorings-list {
-             display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(2px, 1fr));
-            gap: 0.1em; /* Use gap to control spacing between items */
-          }
-            .refactoring-item {
-                flex: 1 1 100%;
-                margin-bottom: 1em;
             }
         }
     </style>
@@ -157,15 +145,15 @@
     <main>
         <section id="rename">
             <h2>Rename Refactorings</h2>
-            <div class="refactorings-list">
-                <div class="refactoring-item">Rename Class</div>
-                <div class="refactoring-item">Rename Constants</div>
-                <div class="refactoring-item">Rename Field</div>
-                <div class="refactoring-item">Rename Method</div>
-                <div class="refactoring-item">Rename Package</div>
-                <div class="refactoring-item">Rename Parameter</div>
-                <div class="refactoring-item">Rename Variable</div>
-            </div>
+            <ul class="refactorings-list">
+                <li>Rename Class</li>
+                <li>Rename Constants</li>
+                <li>Rename Field</li>
+                <li>Rename Method</li>
+                <li>Rename Package</li>
+                <li>Rename Parameter</li>
+                <li>Rename Variable</li>
+            </ul>
         </section>
         <section id="split">
             <h2>Split Refactorings</h2>
