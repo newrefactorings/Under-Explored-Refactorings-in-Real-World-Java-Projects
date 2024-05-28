@@ -93,16 +93,18 @@
         }
         /* Styles for the refactoring list */
         .refactorings-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
             gap: 0.5em; /* Use gap to control spacing between items */
         }
         .refactoring-item {
+            flex: 1 1 calc(33.33% - 1em); /* Adjust width for minimal horizontal space */
+            margin: 0; /* Remove margin */
+            text-align: left;
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: left;
         }
         /* Responsive design for smaller screens */
         @media (max-width: 600px) {
@@ -126,6 +128,7 @@
                 display: block;
             }
             .refactoring-item {
+                flex: 1 1 100%;
                 margin-bottom: 1em;
             }
         }
