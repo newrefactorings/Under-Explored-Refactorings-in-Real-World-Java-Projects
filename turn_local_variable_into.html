@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Turn local variable into field</title>
+    <title>Turn Local Variable into Field</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Turn local variable into field</h1>
+        <h1>Turn Local Variable into Field</h1>
     </header>
     <nav>
         <ul>
@@ -136,8 +136,28 @@
     </nav>
     <main>
         <section id="turn-local">
-            <h2>Turn local variable into field</h2>
-            
+            <h2>Turn Local Variable into Field</h2>
+            <pre><code>    
+      private final TestGenerationContext generationContext;
+
+	+private final DefaultListableBeanFactory beanFactory;
+	InstanceSupplierCodeGeneratorTests() {
+		this.generationContext = new TestGenerationContext();
+	+	this.beanFactory = new DefaultListableBeanFactory();
+	}
+	@Test
+	void generateWhenHasDefaultConstructor() {
+		BeanDefinition beanDefinition = new RootBeanDefinition(TestBean.class);
+	-	DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+	-	compile(beanFactory, beanDefinition, (instanceSupplier, compiled) -> {
+	-		TestBean bean = getBean(beanFactory, beanDefinition, instanceSupplier);
+		+compile(beanDefinition, (instanceSupplier, compiled) -> {
+		+	TestBean bean = getBean(beanDefinition, instanceSupplier);        
+</code></pre>
+            <p>After the refactoring the beanFactory field has been extracted and initialized within the
+        constructor of the InstanceSupplierCodeGeneratorTests class. Sample code patch on
+                <a href="https://github.com/spring-projects/spring-framework/commit/35372e5e72f950ad07e67b9efd5ab76acb07675f" target="blank">link</a>
+ </p>
         </section>
     </main>
     <footer>
