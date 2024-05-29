@@ -137,6 +137,17 @@
     <main>
         <section id="complex-refactoring">
             <h2>Complex Refactoring</h2>
+             <pre><code> 
+        cl.setClearReferencesHttpClientKeepAliveThread(getClearReferencesHttpClientKeepAliveThread());
+                  -  cl.setClearReferencesObjectStreamClassCaches(getClearReferencesObjectStreamClassCaches());
+                    cl.setClearReferencesThreadLocals(getClearReferencesThreadLocals());
+                    cl.setSkipMemoryLeakChecksOnJvmShutdown(getSkipMemoryLeakChecksOnJvmShutdown());
+                
+</code></pre>
+            <p>cl.setClearReferencesObjectStreamClassCaches(getClearReferencesObjectStreamClassCaches());  was removed since all other elements using it were removed. 
+                This brings clarity to the code. This is just one example of complex refactorings e.g dependency replacement,
+            removal of unused property e.t.c. Sample code patch from line 4748 
+            <a href="https://github.com/apache/tomcat/commit/592bc75020589df542320ae0a55cf7ff400bd45f" target="blank">link</a></p>
             
         </section>
     </main>
