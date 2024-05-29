@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Replace array with singletone</title>
+    <title>Replace Array with Singletone</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace array with singletone</h1>
+        <h1>Replace Array with Singletone</h1>
     </header>
     <nav>
         <ul>
@@ -129,6 +129,13 @@
     <main>
         <section>
             <h2>Replace Array with Singletone</h2>
+            <pre><code>
+       - return Arrays.asList(cause);
+        + return singletonList(cause);
+        </code></pre>
+            <p>Using Collections.singletonList simplifies the creation of a single-element list compared to using Arrays.asList. The latter involves more overhead and is less concise when dealing with a single element.
+                This qualifies to be a refactoring because it enhances the clarity, conciseness, and potential performance of the code by replacing array-based collections with a more suitable collection type for single elements.
+            Sample code patch from line 74,75 <a href="https://github.com/junit-team/junit4/commit/17a2f11783fa8e731fe49cf638d51c78468c8c25" target="blank">link</a></p>
             
         </section>
     </main>
