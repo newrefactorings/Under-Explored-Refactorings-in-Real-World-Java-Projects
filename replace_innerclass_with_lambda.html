@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Replace inner Class with Lambda Expression</title>
+    <title>Replace Inner Class with Lambda Expression</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace inner Class with Lambda Expression</h1>
+        <h1>Replace Inner Class with Lambda Expression</h1>
     </header>
     <nav>
         <ul>
@@ -128,8 +128,25 @@
     </nav>
     <main>
         <section>
-            <h2>Replace inner Class with Lambda Expression</h2>
-            
+            <h2>Replace Inner Class with Lambda Expression/h2>
+            <pre><code>
+     IndicesRequestCache(Settings settings) {
+       - this.size = INDICES_CACHE_QUERY_SIZE.get(settings);
+       - this.expire = INDICES_CACHE_QUERY_EXPIRE.exists(settings) ? INDICES_CACHE_QUERY_EXPIRE.get(settings) : null;
+       - long sizeInBytes = size.getBytes();
+       + TimeValue expire = INDICES_CACHE_QUERY_EXPIRE.exists(settings) ? INDICES_CACHE_QUERY_EXPIRE.get(settings) : null;
+        CacheBuilder<Key, BytesReference> cacheBuilder = CacheBuilder.<Key, BytesReference>builder()
+         -   .setMaximumWeight(sizeInBytes)
+            .setMaximumWeight(INDICES_CACHE_QUERY_SIZE.get(settings).getBytes())
+            .weigher((k, v) -> k.ramBytesUsed() + v.ramBytesUsed())
+          -  .removalListener(this);
+           + .removalListener(notification -> notification.getKey().entity.onRemoval(notification));
+        if (expire != null) {
+            cacheBuilder.setExpireAfterAccess(expire);
+        }
+        </code></pre>
+                <P>This is a refactoring because it  replaced the implementation of IndicesRequestCache with a lambda expression, making the code more concise and removing the need for IndicesRequestCache to implement RemovalListener . This replacement does not cause any changes to the code.
+          Sample code patch from line 108 to 109 <a href="https://github.com/newrefactorings/anonymous-page/edit/main/replace_innerclass_with_lambda.html" target="blank">link</a></P>
         </section>
     </main>
     <footer>
