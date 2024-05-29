@@ -128,6 +128,7 @@
     </nav>
     <main>
         <section>
+             <h2>Replace anonymous class with lambda expression</h2>
             <pre><code>
   IndicesRequestCache(Settings settings) {
         -this.size = INDICES_CACHE_QUERY_SIZE.get(settings);
@@ -145,7 +146,7 @@
         }
             </code></pre>
             <p>This is a refactoring because it  replaced the implementation of IndicesRequestCache with a lambda expression, making the code more concise and removing the need for IndicesRequestCache to implement RemovalListener . This replacement does not cause any changes to the code.
-            Sample code patch from lines 108 to 109, 82,83 <a href="https://github.com/elastic/elasticsearch/commit/a5aae93b65257276a5d8e43e28742ae145a41a3f">link</a></p>
+            Sample code patch from lines 108 to 109, 82,83 <a href="https://github.com/elastic/elasticsearch/commit/a5aae93b65257276a5d8e43e28742ae145a41a3f" target="blank">link</a></p>
         </section>
     </main>
     <footer>
