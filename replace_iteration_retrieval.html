@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Replace Iteration-based retrieval with Switch Expression</title>
+    <title>Replace Iteration-Based Retrieval with Switch Expression</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Iteration-based retrieval with Switch Expression</h1>
+        <h1>Replace Iteration-Based Retrieval with Switch Expression</h1>
     </header>
     <nav>
        <ul>
@@ -128,7 +128,29 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Iteration-based retrieval with Switch Expression</h2>
+            <h2>Replace Iteration-Based Retrieval with Switch Expression</h2>
+            <pre><code>
+      -  private static String getPropagationBehaviorName(int propagationBehavior) {
+	-	for (Map.Entry<String, Integer> entry : propagationConstants.entrySet()) {
+	-		if (entry.getValue().equals(propagationBehavior)) {
+	-			return entry.getKey();
+	-		}
+	-	}
+	-	throw new IllegalArgumentException("Unsupported propagation behavior: " + propagationBehavior);
+		+ return switch(propagationBehavior) {
+			+case TransactionDefinition.PROPAGATION_REQUIRED -> "PROPAGATION_REQUIRED";
+			+case TransactionDefinition.PROPAGATION_SUPPORTS -> "PROPAGATION_SUPPORTS";
+			+case TransactionDefinition.PROPAGATION_MANDATORY -> "PROPAGATION_MANDATORY";
+			+case TransactionDefinition.PROPAGATION_REQUIRES_NEW -> "PROPAGATION_REQUIRES_NEW";
+			+case TransactionDefinition.PROPAGATION_NOT_SUPPORTED -> "PROPAGATION_NOT_SUPPORTED";
+			+case TransactionDefinition.PROPAGATION_NEVER -> "PROPAGATION_NEVER";
+			+case TransactionDefinition.PROPAGATION_NESTED -> "PROPAGATION_NESTED";
+			+default -> throw new IllegalArgumentException("Unsupported propagation behavior: " + propagationBehavior);
+		+};
+	}
+        </code></pre>
+            <P>The refactoring replaces map entry traversal with switch expressions, enhancing code readability and potentially improving performance by avoiding unnecessary iteration over map entries. 
+            Sample code patch from line 335 < a href="https://github.com/spring-projects/spring-framework/commit/bcff7d74cd8745dea9fd80839bceb11f850bf3f3" target="blank">link</a></P>
              
         </section>
     </main>
