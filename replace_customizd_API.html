@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace 'expected' attribute with try-catch</h1>
+        <h1>RReplace Customized Methods with API</h1>
     </header>
     <nav>
         <ul>
@@ -128,8 +128,20 @@
     </nav>
     <main>
         <section>
-            <h2>Replace customized method with API</h2>
-            
+            <h2>Replace Customized Methods with API</h2>
+            <pre><code>
+     public Mono<ServerResponse> transferTo(ServerRequest request) {
+			return request.body(BodyExtractors.toParts())
+			-	.filter(FilePart.class::isInstance)
+			+	.ofType(FilePart.class)
+				.next()
+				.cast(FilePart.class)
+				.flatMap(part -> createTempFile()
+				.flatMap(tempFile ->
+				part.transferTo(tempFile)
+        </code></pre>
+            <p>The operator .filter(FilePart.class::isInstance) was replaced with  .ofType(FilePart.class) which is an inbuilt operator. This makes code easy concise and easy to maintain. This replacement does not cause any change to the external behaviour of the code.
+          Sample code patch from line 243 <a href="https://github.com/spring-projects/spring-framework/commit/d96a63944c3d6586dd2c22bd086989d26a3235c8" target="blank">link</a></p>
         </section>
     </main>
     <footer>
