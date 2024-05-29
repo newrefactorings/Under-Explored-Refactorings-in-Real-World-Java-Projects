@@ -137,7 +137,15 @@
     <main>
         <section id="loosen-parameter">
             <h2>Loosen Parameter's Type Limitation</h2>
-            
+            <pre><code> 
+   -static public Test createTest(Class<? extends TestCase> theClass, String name) {
+   -Constructor<? extends TestCase> constructor;
+	+static public Test createTest(Class<?> theClass, String name) {
+		+Constructor<?> constructor;   
+</code></pre>
+            <p>If the parameter does not use feature of the given subclass, 
+                we may retype it with the superclass to improve its reusability. Sample code patch
+            <a href="https://github.com/junit-team/junit4/commit/2de4d6f2bcf699b94614f9208f620f4c56bc9876" target="blank">link</a></p>
         </section>
     </main>
     <footer>
