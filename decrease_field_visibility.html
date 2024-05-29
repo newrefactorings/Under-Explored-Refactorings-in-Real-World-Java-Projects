@@ -137,7 +137,16 @@
     <main>
         <section id="decrease-field">
             <h2>Decrease Field Visibility</h2>
-            
+            <pre><code> 
+      -private static final Statement ALL_TESTS_IGNORED = new Statement() {
+    +protected static final Statement ALL_TESTS_IGNORED = new Statement() {
+</code></pre>
+            <p>The visibility of the field  Statement ALL_TESTS_IGNORED was changed from  private static final 
+                Statement ALL_TESTS_IGNORED to protected static final Statement ALL_TESTS_IGNORED. We envision that
+                there could also be scenarios where the visibility of a code element could be reduced
+                i.e from protected to private. Sample code patch from line 77 
+                <a href="https://github.com/junit-team/junit4/commit/706c38a81f4ebb142855ee3be27e88fa8eca18e9" target="blank">link</a>
+</p>
         </section>
     </main>
     <footer>
