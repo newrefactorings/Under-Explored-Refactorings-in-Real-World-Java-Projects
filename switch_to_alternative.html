@@ -137,6 +137,16 @@
     <main>
         <section id="switch_alternative">
             <h2>Switch to Alternative Implementation(method)</h2>
+            <pre><code>    
+ - assertThat(response.getSourceAsBytes(), nullValue());
+ +  assertThat(response.getSourceAsBytesRef(), nullValue());        
+</code></pre>
+            <p>The method call getResult.getSourceAsBytes() has been replaced with getResult.getSourceAsBytesRef(). 
+        This change  reflects a modification in the Elasticsearch codebase where the method getSourceAsBytesRef()
+                is preferred over getSourceAsBytes()2.The method call response.getGetResult().getSource().size()
+                has been replaced with response.getGetResult().sourceAsMap().size(). Sample code patch from
+                line 104 <a href="https://github.com/elastic/elasticsearch/commit/70eb877528d893fe6ccb3b6bfac4b0d404e7bd52" target="blank">link</a>
+   </p>
             
         </section>
     </main>
