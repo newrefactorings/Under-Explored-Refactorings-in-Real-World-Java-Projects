@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Replace for with while</title>
+    <title>Replace For with While</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace for with while</h1>
+        <h1>Replace For with While</h1>
     </header>
     <nav>
        <ul>
@@ -128,8 +128,22 @@
     </nav>
     <main>
         <section>
-            <h2>Replace for with while</h2>
-            
+            <h2>Replace For with While</h2>
+            <pre><code>
+   - Map<String, Mapper> mergedMappers = null;
+    - for (Mapper mergeWithMapper : mergeWith) {
+     -        Mapper mergeIntoMapper = (mergedMappers == null ? existing.mappers : mergedMappers).get(mergeWithMapper.simpleName());
+       +     Iterator<Mapper> iterator = mergeWith.iterator();
+        +    if (iterator.hasNext() == false) {
+         +       return Map.copyOf(existing.mappers);
+           + }
+           + Map<String, Mapper> mergedMappers = new HashMap<>(existing.mappers);
+           + while (iterator.hasNext()) {
+              +  Mapper mergeWithMapper = iterator.next();
+               + Mapper mergeIntoMapper = mergedMappers.get(mergeWithMapper.simpleName());    
+        </code></pre>
+            <p>Instead of conditionally initializing mergedMappers inside the loop, it is initialized once at the beginning if the mergeWith iterator has elements. This consolidates the map operations into a single initialization where the for was replaced with while.
+            Sample code patch from line 535 to 543 <a href="https://github.com/elastic/elasticsearch/commit/cd38c3a28d459c814b5b6730aac359d3169d2020" target="blank">link</a></p>
         </section>
     </main>
     <footer>
