@@ -129,7 +129,13 @@
     <main>
         <section>
             <h2>Replace collection with list sort</h2>
-            
+            <pre><code>
+      -  Collections.sort(this.filters, Comparator.comparing(KeyedFilter::key));
+       + this.filters.sort(Comparator.comparing(KeyedFilter::key));
+    }
+        </code></pre>
+            <P>The refactoring converted  Collections.sort() to List.sort() since Collections.sort is a static method whereas L	ist.sort is not. The refactoring makes the program follow OO style.
+            Sample patch code from line 154 <a href="https://github.com/elastic/elasticsearch/commit/850e88c5894203d23cd29ed770207768c0c5ff60" target="blank">link</a></P>
         </section>
     </main>
     <footer>
