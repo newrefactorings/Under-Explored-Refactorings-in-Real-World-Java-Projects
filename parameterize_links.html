@@ -137,6 +137,20 @@
     <main>
         <section id="parameterize">
             <h2>Parameterize Links</h2>
+             <pre><code> 
+  - docs-spring: "{docs-site}/spring-framework/docs/{spring-version}"
+   - docs-spring-framework: '{docs-site}/spring-framework/docs/{spring-version}'
+   - api-spring-framework: '{docs-spring-framework}/javadoc-api/org/springframework'
+   - docs-graalvm: 'https://www.graalvm.org/22.3/reference-manual'
+    -docs-spring-boot: '{docs-site}/spring-boot/docs/current/reference'
+    +spring-framework-docs-root: '{docs-site}/spring-framework/docs'
+    +spring-framework-api: '{spring-framework-docs-root}/{spring-version}/javadoc-api/org/springframework'
+    +spring-framework-api-kdoc: '{spring-framework-docs-root}/{spring-version}/kdoc-api'
+    +spring-framework-reference: '{spring-framework-docs-root}/{spring-version}/reference'
+</code></pre>
+            <p> Several links are extracted into  asciidoctor attributes  for example 'https://spring.io' is is 
+                extracted to the asciidoctor. Sample code patch from line 23 <a href="https://github.com/spring-projects/spring-framework/commit/856740296938612af9cd9564eee72c456fec3e10" target="blank">link</a>
+</p>
             
         </section>
     </main>
