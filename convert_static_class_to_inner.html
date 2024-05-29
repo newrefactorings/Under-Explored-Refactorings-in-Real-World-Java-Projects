@@ -137,7 +137,16 @@
     <main>
         <section id="convert-static">
             <h2>Convert Static Nested Class to Inner Class</h2>
-            
+             <pre><code> 
+      - static final class Search {
+      +	final class Search {
+		static final Predicate<Class<?>> always = clazz -> true;                
+</code></pre>
+         <p>By removing the static modifier, the Search class becomes an inner class, which means it is 
+             now associated with an instance of the enclosing class and can access the 
+             instance members of the enclosing class. This makes the code simpler and concise. Sample code patch
+             line 510 <a href="https://github.com/spring-projects/spring-framework/commit/eafbcfd38526c0bb62200c334fa09ea4b6cf6c75" target="blanket">link</a>
+</p>   
         </section>
     </main>
     <footer>
