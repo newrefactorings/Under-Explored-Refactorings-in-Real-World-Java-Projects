@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Replace for loop with foreach</title>
+    <title>Replace For Loop with Foreach</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace for loop with for each</h1>
+        <h1>Replace For Loop with Foreach</h1>
     </header>
     <nav>
        <ul>
@@ -128,7 +128,20 @@
     </nav>
     <main>
         <section>
-            <h2>Replace for loop with for each</h2>
+            <h2>Replace For Loop with Foreach</h2>
+            <pre><code>
+    boolean lastMkdirsCallSuccessful = true;
+      -  for (int i = 0; i < paths.length; i++) {
+      -      relativePath = new File(relativePath, paths[i]);
+      +  for (String path : paths) {
+            relativePath = new File(relativePath, path);
+            file = new File(root, relativePath.getPath());
+        }
+       }    
+
+        </code></pre>
+          <p>A foreach loop replaced the for loop to simplify the code. Sample code patch <a href="https://github.com/junit-team/junit4/commit/4c6975f955d781ad641e076fe2788a2f4c6ada34" target="blank>link</a></p>
+        </section>
             
     </main>
     <footer>
