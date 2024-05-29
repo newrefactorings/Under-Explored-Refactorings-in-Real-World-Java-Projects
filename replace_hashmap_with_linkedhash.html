@@ -129,6 +129,17 @@
     <main>
         <section>
             <h2>Replace HashMap with LinkedHashMap</h2>
+            <pre><code>
+       - Map<Class<? extends Annotation>, List<FrameworkMethod>> methodsForAnnotations = new HashMap<Class<? extends Annotation>, List<FrameworkMethod>>();
+        - Map<Class<? extends Annotation>, List<FrameworkField>> fieldsForAnnotations = new HashMap<Class<? extends Annotation>, List<FrameworkField>>();
+       + Map<Class<? extends Annotation>, List<FrameworkMethod>> methodsForAnnotations =
+         +       new LinkedHashMap<Class<? extends Annotation>, List<FrameworkMethod>>();
+        + Map<Class<? extends Annotation>, List<FrameworkField>> fieldsForAnnotations =
+                new LinkedHashMap<Class<? extends Annotation>, List<FrameworkField>>();      
+
+        </code></pre>
+                    <p>The introduced changed ensured that the order of elements is maintained according to their insertion order by replacing a HashMap with a LinkedHashMap, which is often beneficial for predictable iteration and debugging.
+                    Sample code patch from line 46 <a href="" target="blank">link</a></p>
             
         </section>
     </main>
