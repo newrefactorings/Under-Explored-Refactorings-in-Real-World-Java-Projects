@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Increase Field Visibilty</title>
+    <title>Increase Field Visibility</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Increase Field Visibilty</h1>
+        <h1>Increase Field Visibility</h1>
     </header>
     <nav>
         <ul>
@@ -136,8 +136,15 @@
     </nav>
     <main>
         <section id="increase-visibilty">
-            <h2>Increase Field Visibilty</h2>
-            
+            <h2>Increase Field Visibility</h2>
+            <pre><code> 
+ -private static final Statement ALL_TESTS_IGNORED = new Statement() {
+   + protected static final Statement ALL_TESTS_IGNORED = new Statement() {   
+</code></pre>
+            <p>On line 77 of the patch  the visibility of the field  Statement ALL_TESTS_IGNORED was changed from  private static final 
+                Statement ALL_TESTS_IGNORED to protected static final Statement ALL_TESTS_IGNORED.
+                Sample patch from line 77 <a href="https://github.com/junit-team/junit4/commit/706c38a81f4ebb142855ee3be27e88fa8eca18e9" target="blank">link</a>
+</p>
         </section>
     </main>
     <footer>
