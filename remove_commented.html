@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Remove Commented out code</title>
+    <title>Remove Commented Out Code</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Commented out code</h1>
+        <h1>Remove Commented Out Code</h1>
     </header>
     <nav>
         <ul>
@@ -136,7 +136,16 @@
     </nav>
     <main>
         <section id="remove-commented">
-            <h2>Remove Commented out code</h2>
+            <h2>Remove Commented Out Code</h2>
+            <pre><code>private List<Throwable> getCauses(Throwable cause) {
+-//if (cause instanceof InvocationTargetException)
+-//return getCauses(cause.getCause());
+-//if (cause instanceof InitializationError)
+-//return ((InitializationError) cause).getCauses();
+-//return Arrays.asList(cause);	
+-//}
+    </code></pre>
+            <P>Unnecessary comments were removed. Sample code patch from line 22 <a href="https://github.com/junit-team/junit4/commit/5af049cac0c976c586d955607fa459aacb778d3c" target="blank">link</a></P>
             
         </section>
     </main>
