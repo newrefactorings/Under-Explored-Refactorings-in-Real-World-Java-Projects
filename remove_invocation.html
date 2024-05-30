@@ -137,7 +137,14 @@
     <main>
         <section id="invocation">
             <h2>Remove Unnecessary Method Invocation</h2>
-            
+             <pre><code>
+  	-assertThat(Arrays.asList(bf.getBeanNamesForType(TestBean.class, false, false)).contains("scoped")).isTrue();
+	-assertThat(Arrays.asList(bf.getBeanNamesForType(TestBean.class, true, false)).contains("scoped")).isTrue();
+	+assertThat(Arrays.asList(bf.getBeanNamesForType(TestBean.class, false, false))).contains("scoped");
+	+assertThat(Arrays.asList(bf.getBeanNamesForType(TestBean.class, true, false))).contains("scoped");
+    </code></pre>
+            <p>Repetitive invocations of the method were removed. Sample code path from line 42 <a href="https://github.com/spring-projects/spring-framework/commit/e2852e7355167aaf23e73eb2d63d04b3e3c57322" target="blank">link</a>
+ </p>
         </section>
     </main>
     <footer>
