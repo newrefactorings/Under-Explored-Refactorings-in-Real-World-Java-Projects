@@ -137,6 +137,12 @@
     <main>
         <section id="remove-brackets">
             <h2>Remove Brackets</h2>
+              <pre><code>
+  		-{
+				return CoreMatchers.instanceOf(causeClass).matches(f.getException().getCause());
+			-}
+        </code></pre>
+            <p>Superfluous (unnecessary) brackets were removed to make the code more precise. The removal of these brackets do not change the code in any way. Sample code patch from line 85 <a href="https://github.com/junit-team/junit4/commit/bd6dc3aff19a3d8e8e555d16a05a42557a755e0a" target="blank">link</a></p>
             
         </section>
     </main>
