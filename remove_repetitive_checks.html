@@ -137,6 +137,24 @@
     <main>
         <section id="repetitive">
             <h2>Remove Repetitive Checking</h2>
+            <pre><code>
+    @Override
+    public void setContentLength(int len) {
+       - checkFacade();
+        if (isCommitted()) {
+            return;
+        }
+@@ -143,7 +142,6 @@ public void setContentLength(int len) {
+
+    @Override
+    public void setContentLengthLong(long length) {
+      -  checkFacade();
+        if (isCommitted()) {
+            return;
+        }
+    </code></pre>
+            <p>The method checkFacade() was called at the beginning of both getOutputStream() and getWriter() methods.These calls were removed, beacuse it would be called by the following condition check (i.e. isCommitted()).
+            Sample code patch from line 136 <a href="https://github.com/apache/tomcat/commit/ff53af8b692c179606404d00344511ea7ca8eae3" target="blank">link</a></p>
             
         </section>
     </main>
