@@ -137,6 +137,11 @@
     <main>
         <section id="deprecated">
             <h2>Remove Deprecated Method</h2>
+              <pre><code>private List<Throwable> getCauses(Throwable cause) {
+        -File buildDir = settings.gradle.rootProject.getBuildDir()
+        +File buildDir = settings.gradle.rootProject.getLayout().getBuildDirectory().getAsFile().get()
+    </code></pre>
+            <p>Get BuildDir is deprecated and thus the function was implemented in an alternative way. Sample code patch from line 50 <a href="https://github.com/spring-projects/spring-framework/commit/35103b0cd1a431684b1247dc6e964cf8aa6586c1" target="blank">link</a></p>
             
         </section>
     </main>
