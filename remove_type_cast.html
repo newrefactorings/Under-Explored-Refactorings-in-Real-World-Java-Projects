@@ -137,6 +137,13 @@
     <main>
         <section id="type-cast">
             <h2>Remove Unnecessary Type Cast</h2>
+            <pre><code>
+  	static CloseOp getInstance(OpInstanceCache cache) {
+     - return (CloseOp)cache.get(OP_CLOSE);
+     + return cache.get(OP_CLOSE);
+    }
+    </code></pre>
+            <p>All redundant casts are removed to avoid duplication and to make the code concise. Sample code patch from line 826 <a href="https://github.com/apache/hadoop/commit/895f7c51fd1031e0674c30e6daca27531ad4a3db" target="blank">link</a></p>
             
         </section>
     </main>
