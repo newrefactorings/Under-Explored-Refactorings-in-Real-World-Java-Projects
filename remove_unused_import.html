@@ -137,6 +137,16 @@
     <main>
         <section id="unused_import">
             <h2>Remove Unused Import</h2>
+            <pre><code>
+  	import java.lang.reflect.Array;
+        import java.lang.reflect.Field;
+        -import java.lang.reflect.InvocationTargetException;
+        -import java.lang.reflect.Method;
+        import java.lang.reflect.Modifier;
+        import java.util.ArrayList;
+        import java.util.List;
+    </code></pre>
+            <p>Unused imports were removed. Sample code patch from line 8 <a href="https://github.com/junit-team/junit4/commit/c4e7dfe1ea2722c7d8a29373744e9a4a4f2f9c66" target="blank">link</a></p>
             
         </section>
     </main>
