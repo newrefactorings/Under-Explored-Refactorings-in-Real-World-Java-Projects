@@ -137,6 +137,15 @@
     <main>
         <section id="duplicate-condition">
             <h2>Remove Duplicate Condition Checks</h2>
+             <pre><code>private List<Throwable> getCauses(Throwable cause) {
+       -if (!componentScans.isEmpty() &&
+		-		!this.conditionEvaluator.shouldSkip(sourceClass.getMetadata(), ConfigurationPhase.REGISTER_BEAN)) {
+		+if (!componentScans.isEmpty()) {
+			for (AnnotationAttributes componentScan : componentScans) {
+				// The config class is annotated with @ComponentScan -> perform the scan immediately
+				Set<BeanDefinitionHolder> scannedBeanDefinitions =
+    </code></pre>
+            <p>Duplicate conditional checks were removed to avoid duplication and thus, making this removal a refactoring. Sample code patch from line 316 <a href="https://github.com/spring-projects/spring-framework/commit/871f705bca8da88c95966b9ab37d9aefa0dd24ca" target="blank">link</a></p>
             
         </section>
     </main>
