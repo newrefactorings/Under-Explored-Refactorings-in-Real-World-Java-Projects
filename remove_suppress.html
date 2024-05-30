@@ -137,7 +137,13 @@
     <main>
         <section id="remove_suppress">
             <h2>Remove Suppress Warning Annoation</h2>
-            
+            <pre><code>
+   -@SuppressWarnings("restriction")
+public class PrintableResult {
+	public static PrintableResult testResult(Class<?> type) {
+		return new PrintableResult(type);
+    </code></pre>
+            <p>Unused suppress warning annotations were removed. Sample code patch from line 15 <a href="https://github.com/junit-team/junit4/commit/e727dd6b1cb2caa1699da3b2df7625c9554adc36" target="blank">link</a></p>
         </section>
     </main>
     <footer>
