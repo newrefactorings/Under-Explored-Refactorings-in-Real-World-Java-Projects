@@ -137,7 +137,14 @@
     <main>
         <section id="unnecessary">
             <h2>Remove Unnecessary Array Creation</h2>
-            
+            <pre><code>
+   public ErrorReportingRunner(Class<?> testClass, Throwable cause) {
+       - this(cause, new Class<?>[] { testClass });
+       + this(cause, testClass);
+    }
+    </code></pre>
+            <p>The explicit array creation this(cause, new Class<?>[] { testClass }) is removed because the single-element array is equivalent to the element itself for the varargs parameter that they are assigned to. Sample code patch from line
+            19 <a href="https://github.com/junit-team/junit4/commit/17a2f11783fa8e731fe49cf638d51c78468c8c25" target="blank">link</a></p>
         </section>
     </main>
     <footer>
