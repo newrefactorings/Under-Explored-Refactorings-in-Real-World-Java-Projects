@@ -137,6 +137,15 @@
     <main>
         <section id="add-final">
             <h2>Add Final Key word</h2>
+            <pre><code>
+    -private Set<String> connectingNodes;
+    -private ExponentialBackoff reconnectBackoff;
+    -private ExponentialBackoff connectionSetupTimeout;
+    +private final Set<String> connectingNodes;
+    +private final ExponentialBackoff reconnectBackoff;
+    +private final ExponentialBackoff connectionSetupTimeout;
+        </code></pre>
+            <p>A final keyword was added. Sample code patch from line 47 <a href="https://github.com/apache/kafka/commit/65424ab484b8175386b53ee5d56c980d078c29a1" target="blank">link</a></p>
            
         </section>
     </main>
