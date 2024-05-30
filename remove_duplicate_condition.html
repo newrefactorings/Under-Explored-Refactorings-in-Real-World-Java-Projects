@@ -137,7 +137,7 @@
     <main>
         <section id="duplicate-condition">
             <h2>Remove Duplicate Condition Checks</h2>
-             <pre><code>private List<Throwable> getCauses(Throwable cause) {
+             <pre><code>
        -if (!componentScans.isEmpty() &&
 		-		!this.conditionEvaluator.shouldSkip(sourceClass.getMetadata(), ConfigurationPhase.REGISTER_BEAN)) {
 		+if (!componentScans.isEmpty()) {
