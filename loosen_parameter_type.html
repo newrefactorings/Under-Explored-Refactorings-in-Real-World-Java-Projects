@@ -138,10 +138,10 @@
         <section id="loosen-parameter">
             <h2>Loosen Parameter's Type Limitation</h2>
             <pre><code> 
-   -static public Test createTest(Class<%? extends TestCase> theClass, String name) {
-   -Constructor<%? extends TestCase> constructor;
-	+static public Test createTest(Class<%?> theClass, String name) {
-		+Constructor<%?> constructor;   
+   -static public Test createTest(Class&lt;? extends TestCase&gt; theClass, String name) {
+   - Constructor&lt;? extends TestCase&gt; constructor;
+	+static public Test createTest(Class&lt;?&gt; theClass, String name) {
+		+ Constructor&lt;?&gt; constructor;   
 </code></pre>
             <p>If the parameter does not use feature of the given subclass, 
                 we may retype it with the superclass to improve its reusability. Sample code patch
