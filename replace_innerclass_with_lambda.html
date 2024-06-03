@@ -145,7 +145,7 @@
             cacheBuilder.setExpireAfterAccess(expire);
         }
         </code></pre>
-                <P>Initially method reference for the weigher. The lambda expression (k, v) -> k.ramBytesUsed() + v.ramBytesUsed() replaces the inner class implementation of the Weigher interface.
+                <P>Initially method reference was implemented for the weigher. The lambda expression (k, v) -> k.ramBytesUsed() + v.ramBytesUsed() replaces the inner class implementation of the Weigher interface.
                     Sample code patch from line 81<a href="https://github.com/elastic/elasticsearch/commit/a5aae93b65257276a5d8e43e28742ae145a41a3f" target="blank">link</a></P>
         </section>
     </main>
