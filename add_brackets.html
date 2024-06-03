@@ -139,12 +139,23 @@
             <h2>Add Brackets </h2>
            
            <pre><code>
-    		-{
-				return CoreMatchers.instanceOf(causeClass).matches(f.getException().getCause());
-			-}
+    		@Test
+	public void expectedExceptionClauseExists() {
+		-assertThat(new JUnitCore().run(ExpectedExceptionClause.class),
+		+assertThat(new JUnitCore().run(HasWrongExpectedException.class),
+				new CauseMatcher(IllegalArgumentException.class));
+	-}
+
+	-@Test
+	-public void unExpectedExceptionFails() {
+		-assertThat(
+				-testResult(HasWrongExpectedException.class),
+				-hasSingleFailureContaining("Expected: an instance of java.lang.NullPointerException"));
+	-}
+	+}	
         </code></pre>
-            <p>Superfluous (unnecessary) brackets were removed to make the code more precise. The removal of these brackets do not change the code in any way.We envision a scenario where such brackets could also be added to make the code
-            more readable.Sample code patch from line 85 <a href="https://github.com/junit-team/junit4/commit/bd6dc3aff19a3d8e8e555d16a05a42557a755e0a" target="blank">link</a></p>
+            <p> After the removal of unExpectedExceptionFails brackets were addeded. Sample code patch from line 90
+		    <a href="https://github.com/junit-team/junit4/commit/bd6dc3aff19a3d8e8e555d16a05a42557a755e0a" target="blank">link</a></p>
         </section>
     </main>
     <footer>
