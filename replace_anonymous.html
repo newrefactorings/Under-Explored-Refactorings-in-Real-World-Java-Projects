@@ -145,7 +145,7 @@
             cacheBuilder.setExpireAfterAccess(expire);
         }
             </code></pre>
-            <p>Initially an anonymous class for the removal listener. The lambda expression notification -> notification.getKey().entity.onRemoval(notification) replaces an anonymous class implementation of the RemovalListener interface. Sample code patch line 51, 82,87
+            <p>Initially an anonymous class was implemented for the removal listener. The lambda expression notification -> notification.getKey().entity.onRemoval(notification) replaces the anonymous class implementation of the RemovalListener interface. Sample code patch line 51, 82,87
                 <a href="https://github.com/elastic/elasticsearch/commit/a5aae93b65257276a5d8e43e28742ae145a41a3f" target="blank">link</a></p>
         </section>
     </main>
