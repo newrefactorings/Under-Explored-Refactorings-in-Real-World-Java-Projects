@@ -141,7 +141,7 @@
      -val ClusterResourceFilter = new ResourcePatternFilter(JResourceType.CLUSTER, JResource.CLUSTER_NAME, PatternType.LITERAL)
   +private val ClusterResourceFilter = new ResourcePatternFilter(JResourceType.CLUSTER, JResource.CLUSTER_NAME, PatternType.LITERAL)
 </code></pre>
-            <p>val ClusterResourceFilter field is changed to being private. This   changes  does not affect the external behavior of the code but improve internal structure, maintainability, and restrict unnecessary access to internal details. 
+            <p>val ClusterResourceFilter field is changed to being private. This   modification  does not affect the external behavior of the code but improves internal structure, maintainability, and restrict unnecessary access to internal details. 
                 Sample code from line 46 <a href="https://github.com/apache/kafka/commit/2a6e420dfbc70971ec8585bf78c76b51d54498e6" target="blank">link</a>
 </p>
         </section>
