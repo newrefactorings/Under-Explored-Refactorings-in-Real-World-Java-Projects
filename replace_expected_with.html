@@ -129,16 +129,17 @@
         <section>
             <h2>Replace 'expected' attribute with try-catch</h2>
             <pre><code>
-- @Test(expected = AssumptionViolatedException.class)
-+ @Test
-  public void assumeThatWorks() {
-      try {
-         - assumeThat(1, is(2));
-          fail("should throw AssumptionViolatedException");
-      } catch (AssumptionViolatedException e) {
-          // expected
-      }
-  }
+ -@Test(expected = AssumptionViolatedException.class)
+   + @Test
+    public void assumeThatWorks() {
+        -assumeThat(1, is(2));
+       + try {
+            +assumeThat(1, is(2));
+            +fail("should throw AssumptionViolatedException");
+      +  } catch (AssumptionViolatedException e) {
+            // expected
+        +}
+   + }
             </code></pre>
             <p>The original code used the expected attribute of the @Test annotation to specify the expected exception. The refactored code removes the expected attribute and instead uses a try-catch block to catch the expected exception. This improves readability and consistent exception handling.
                 Sample code patch from line 79 to 88 <a href="https://github.com/junit-team/junit4/commit/df016dc056ab15dfa7a6c448ef1905b27eff877f" target="blank">link</a></p>
