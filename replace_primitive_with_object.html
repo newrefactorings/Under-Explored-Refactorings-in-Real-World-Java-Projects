@@ -134,7 +134,7 @@
     - String a = CapacitySchedulerConfiguration.ROOT + ".testqueue";
      + QueuePath a = new QueuePath(CapacitySchedulerConfiguration.ROOT + ".testqueue");
         </code></pre>
-            <P>A primitive data type string is replaced by an object (queuepath). Encapsulating the path logic within an object makes the code more readable and understandable, as the purpose and structure of the data become clearer.
+            <P>A primitive data type string is replaced by an object (queuepath). Encapsulating the path logic within an object makes the code more readable and understandable, as the purpose and structure of the data becomes clearer.
             Sample code patch from line 185 <a href="https://github.com/apache/hadoop/commit/dd72e8fbc364e2a9356cc70f10025a15f0ee44b6" target="blank">link</a></P>
         </section>
     </main>
