@@ -1,2 +1,2 @@
-# Introduction to Emerging Refactorings
-### This is the web listing presentation of the new emerging refactorings.
+### Introduction to Emerging Refactorings
+#### This is the web introduction to the emerging refactorings.
