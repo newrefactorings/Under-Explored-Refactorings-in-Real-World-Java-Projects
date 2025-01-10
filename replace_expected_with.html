@@ -143,16 +143,17 @@
             </code></pre>
             <p>The original code used the expected attribute of the @Test annotation to specify the expected exception. The refactored code removes the expected attribute and instead uses a try-catch block to catch the expected exception. This improves readability and consistent exception handling.
                 Sample code patch from line 79 to 88 <a href="https://github.com/junit-team/junit4/commit/df016dc056ab15dfa7a6c448ef1905b27eff877f" target="blank">link</a></p>
-            <p><strong>Refactoring Definition:</strong><br>
+           <p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
 "Replace 'expected' attribute with try-catch" involves replacing the use of the <code>expected</code> attribute in a <code>@Test</code> annotation with an explicit <code>try-catch</code> block to verify the occurrence of an expected exception in JUnit test cases.
 </p>
 
-<p><strong>Rationale:</strong></p>
-<ul>
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
     <li><strong>Flexibility in Testing:</strong> Using a <code>try-catch</code> block allows greater control and flexibility for additional assertions, such as checking the exception message or state before the exception was thrown.</li>
     <li><strong>Improved Readability:</strong> The <code>try-catch</code> structure can make it more explicit and clear where the exception is expected to occur, aiding in test comprehension.</li>
     <li><strong>Avoid Ambiguity:</strong> The <code>expected</code> attribute applies to the entire test method, which can be misleading if the method contains multiple statements. With <code>try-catch</code>, the exception is explicitly associated with a specific block of code.</li>
 </ul>
+
         </section>
     </main>
     <footer>
