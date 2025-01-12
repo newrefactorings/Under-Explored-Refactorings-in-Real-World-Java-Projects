@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Arraylist with Primitive Array</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Arraylist with Primitive Array</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,7 +128,7 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Arraylist with Primitive Array</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Arraylist with Primitive Array</h2>
              <pre><code>
        private String[] copyArray(String[] args, int from, int to) {
        - ArrayList<String> result = new ArrayList<String>();
@@ -143,13 +143,22 @@
         return result;
     }
         </code></pre>
-            <P>The copyArray method in the JUnitCommandLineParseResult class replaces the usage of an ArrayList<String> with a primitive array of strings (String[]). A primitive array might be preferred for its simplicity and efficiency. 
-                This does not affect the external behaviour of the code. Sample code patch from line 88 to 89 <a href="https://github.com/junit-team/junit4/commit/b052c7124c9cdc04fdc1800c5d9f9de7cfd8e0ca" target="blank">link</a></P>
-            
+            <P style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 88 to 89 <a href="https://github.com/junit-team/junit4/commit/b052c7124c9cdc04fdc1800c5d9f9de7cfd8e0ca" target="blank">link</a></P>
+
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
+<em>Replace Primitive List with Array</em> involves replacing an <code>ArrayList</code> or similar collection-based implementation with a primitive array to manage a fixed-size collection of elements directly.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+     <li><strong>Readability and Clarity:</strong> For operations that require a fixed number of elements, arrays are a more straightforward and concise representation than dynamic lists.</li>
+    <li><strong>Type-Safety and Explicitness:</strong> Arrays clearly express the fixed size and type of the collection, reducing potential errors related to dynamic resizing or unintended additions.</li>
+</ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
