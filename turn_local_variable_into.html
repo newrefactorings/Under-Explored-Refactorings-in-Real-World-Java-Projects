@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Turn Local Variable into Field</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Turn Local Variable into Field</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="turn-local">
-            <h2>Turn Local Variable into Field</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Turn Local Variable into Field</h2>
             <pre><code>    
       private final TestGenerationContext generationContext;
 
@@ -154,14 +154,27 @@
 		+compile(beanDefinition, (instanceSupplier, compiled) -> {
 		+	TestBean bean = getBean(beanDefinition, instanceSupplier);        
 </code></pre>
-            <p>After the refactoring the beanFactory field has been extracted and initialized within the
-        constructor of the InstanceSupplierCodeGeneratorTests class. Sample code patch from line 71
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>Sample code patch from line 71
                 <a href="https://github.com/spring-projects/spring-framework/commit/35372e5e72f950ad07e67b9efd5ab76acb07675f" target="blank">link</a>
  </p>
-        </section>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Turn Local Variable into a Field</em> involves promoting a local variable, previously defined within a method, into a class-level field. This change makes the variable accessible across different methods of the class and ensures its value is retained for the duration of the class's lifecycle.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Reusability:</strong> Turning a local variable into a field allows it to be reused across multiple methods, reducing redundancy and improving code organization.</li>
+    <li><strong>State Retention:</strong> Fields retain their state for the lifetime of the object, making them suitable for shared resources or context required by multiple methods.</li>
+    <li><strong>Simplified Initialization:</strong> Moving initialization to a constructor centralizes setup logic, improving clarity and maintainability.</li>
+    <li><strong>Readability and Consistency:</strong> This refactoring eliminates redundant variable declarations, making the code cleaner and easier to follow.</li>
+    <li><strong>Facilitates Testing and Debugging:</strong> Class-level fields can be inspected or modified for testing purposes, making debugging more straightforward.</li>
+</ul>
+
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
