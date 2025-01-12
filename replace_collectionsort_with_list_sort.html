@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Collection Sort with List Sort</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Collection Sort with List Sort</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,18 +128,31 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Collection Sort with List Sort</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Collection Sort with List Sort</h2>
             <pre><code>
       -  Collections.sort(this.filters, Comparator.comparing(KeyedFilter::key));
        + this.filters.sort(Comparator.comparing(KeyedFilter::key));
     }
         </code></pre>
-            <P>The refactoring converted  Collections.sort() to List.sort() since Collections.sort is a static method whereas L	ist.sort is not. The refactoring makes the program follow OO style.
+            <P style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
             Sample patch code from line 154 <a href="https://github.com/elastic/elasticsearch/commit/850e88c5894203d23cd29ed770207768c0c5ff60" target="blank">link</a></P>
+        <p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
+<em>Replace Collections.sort with List.sort</em> involves replacing the static <code>Collections.sort</code> method with the more concise <code>List.sort</code> method to sort a list in place using a comparator.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Readability:</strong> Using <code>List.sort</code> directly is more concise and aligns with modern Java practices, reducing boilerplate code.</li>
+    <li><strong>Increased Clarity:</strong> The <code>List.sort</code> method explicitly operates on the list instance, making the code more intuitive and object-oriented.</li>
+    <li><strong>Modern Java Best Practices:</strong> <code>List.sort</code> was introduced in Java 8, promoting the use of instance methods over static utility methods where appropriate.</li>
+    <li><strong>Consistency:</strong> Replacing <code>Collections.sort</code> with <code>List.sort</code> ensures consistency with other instance methods, improving maintainability.</li>
+</ul>
+
+        
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
