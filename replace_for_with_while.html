@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace For with While</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace For with While</h1>
     </header>
     <nav>
-       <ul>
+       <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,7 +128,7 @@
     </nav>
     <main>
         <section>
-            <h2>Replace For with While</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace For with While</h2>
             <pre><code>
    - Map<String, Mapper> mergedMappers = null;
     - for (Mapper mergeWithMapper : mergeWith) {
@@ -142,12 +142,24 @@
               +  Mapper mergeWithMapper = iterator.next();
                + Mapper mergeIntoMapper = mergedMappers.get(mergeWithMapper.simpleName());    
         </code></pre>
-            <p>Instead of conditionally initializing mergedMappers inside the loop, it is initialized once at the beginning if the mergeWith iterator has elements. This consolidates the map operations into a single initialization where the for was replaced with while.
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
             Sample code patch from line 535 to 543 <a href="https://github.com/elastic/elasticsearch/commit/cd38c3a28d459c814b5b6730aac359d3169d2020" target="blank">link</a></p>
-        </section>
+
+               <p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
+<em>Replace for with while</em> involves replacing a <code>for</code> loop with a <code>while</code> loop to iterate through a collection or perform repetitive actions under a specific condition.
+</p>
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Greater Flexibility:</strong> A <code>while</code> loop offers more control over iteration conditions, allowing dynamic checks or updates to be performed within the loop body.</li>
+    <li><strong>Improved Readability:</strong> For certain cases, <code>while</code> loops can make the logic more explicit and easier to understand, especially when the exit condition is not tied directly to a collection’s structure.</li>
+    <li><strong>Alignment with Logic Needs:</strong> In scenarios where the iteration logic requires additional checks (e.g., handling empty collections or breaking early), <code>while</code> loops better suit the context compared to a <code>for</code> loop.</li>
+    <li><strong>Enhanced Adaptability:</strong> Using a <code>while</code> loop can make the code adaptable to future changes in iteration conditions or behavior.</li>
+</ul>
+
+           </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
