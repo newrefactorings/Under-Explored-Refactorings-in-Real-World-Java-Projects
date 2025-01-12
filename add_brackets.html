@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Add Brackets</h1>
+        <h1  style="font-family: 'Times New Roman', Times, serif;">Add Brackets</h1>
     </header>
     <nav>
-        <ul>
+        <ul  style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -154,12 +154,25 @@
 	-}
 	+}	
         </code></pre>
-            <p> After the removal of unExpectedExceptionFails brackets were addeded. Sample code patch from line 90
+            <p  style="font-family: 'Times New Roman', Times, serif;"> <strong>Reference:</strong> Sample code patch from line 90
 		    <a href="https://github.com/junit-team/junit4/commit/bd6dc3aff19a3d8e8e555d16a05a42557a755e0a" target="blank">link</a></p>
-        </section>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Add Brackets Refactoring</em> involves adding brackets (curly braces <code>{}</code>) around code blocks to improve code structure, clarity, and maintainability. It often ensures that even single-line statements or tightly coupled lines are enclosed in brackets, enhancing readability and reducing the risk of errors during future modifications.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Readability:</strong> Brackets provide clear visual boundaries for code blocks, making the flow and hierarchy of logic easier to follow.</li>
+    <li><strong>Error Prevention:</strong> Adding brackets minimizes the risk of accidentally introducing logic errors, particularly when additional statements are added later.</li>
+    <li><strong>Consistency:</strong> Enclosing all blocks, including those with single-line statements, ensures uniformity across the codebase, aligning with common coding standards.</li>
+    <li><strong>Ease of Maintenance:</strong> Brackets make it simpler to refactor or expand code in the future without introducing syntax or logic issues.</li>
+</ul>
+
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p  style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
