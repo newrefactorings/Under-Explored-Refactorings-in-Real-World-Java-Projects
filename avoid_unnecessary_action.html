@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Avoid Unnecessary Actions by Precondition Checking</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Avoid Unnecessary Actions by Precondition Checking</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="avoid-unnecessary">
-            <h2>Avoid Unnecessary Actions by Precondition Checking</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Avoid Unnecessary Actions by Precondition Checking</h2>
             <pre><code> 
  public void setBytesReceived(long bytesReceived) {
        deadBytesReceived.reset();
@@ -156,14 +156,26 @@
          +   deadBytesSent.add(bytesSent);
         +}  
 </code></pre>
-            <p>The original code always performed an addition operation (deadBytesReceived.add(bytesReceived), etc.) even when the value to be added was zero.The refactored code includes a condition to check if the value is non-zero before performing the addition operation.By adding a condition to check if the value is non-zero before performing the addition, 
-                the code avoids unnecessary operations. This improves code clarity and readbility.
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
                 Sample code patch from line 63/64 <a href="https://github.com/apache/tomcat/commit/3a9dbd17f558f8651fcbc3683772c14bcb0694d9" target="blank">link</a>
             </p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Avoid Unnecessary Actions by Precondition Checking</em> involves introducing a condition to check a prerequisite before executing an operation. This ensures that the action is only performed when necessary, avoiding redundant computations or updates.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">     
+    <li><strong>Preservation of System State:</strong> Prevents inadvertent changes or updates that are unnecessary and could lead to unintended side effects.</li>
+    <li><strong>Improved Clarity:</strong> Makes the intent of the code more explicit by specifying when an action should or should not occur.</li>
+   
+</ul>
+
+        
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
