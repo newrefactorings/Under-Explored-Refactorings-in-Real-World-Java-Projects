@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Inner Class with Lambda Expression</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Inner Class with Lambda Expression</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,7 +128,7 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Inner Class with Lambda Expression</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Inner Class with Lambda Expression</h2>
             <pre><code>
      IndicesRequestCache(Settings settings) {
        - this.size = INDICES_CACHE_QUERY_SIZE.get(settings);
@@ -145,12 +145,26 @@
             cacheBuilder.setExpireAfterAccess(expire);
         }
         </code></pre>
-                <P>Initially method reference was implemented for the weigher. The lambda expression (k, v) -> k.ramBytesUsed() + v.ramBytesUsed() replaces the inner class implementation of the Weigher interface.
+                <P style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
                     Sample code patch from line 81<a href="https://github.com/elastic/elasticsearch/commit/a5aae93b65257276a5d8e43e28742ae145a41a3f" target="blank">link</a></P>
+        
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Replace Inner Class with Lambda Expression</em> involves replacing the use of an anonymous inner class with a lambda expression to simplify and streamline the code, particularly when the inner class is functional in nature (i.e., implements a single abstract method).
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Readability:</strong> Lambda expressions provide a concise syntax, making the code more readable and expressive, especially for simple operations.</li>
+    <li><strong>Reduced Boilerplate:</strong> Eliminates unnecessary boilerplate code associated with defining and instantiating anonymous inner classes.</li>
+    <li><strong>Enhanced Maintainability:</strong> Simplifies the code structure, making it easier to understand and maintain.</li>
+    <li><strong>Modern Practices:</strong> Aligns the code with modern Java practices introduced in Java 8, promoting the use of functional programming paradigms.</li>
+</ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
