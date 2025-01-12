@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Parameterize Links</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Parameterize Links</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="parameterize">
-            <h2>Parameterize Links</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Parameterize Links</h2>
              <pre><code> 
   - docs-spring: "{docs-site}/spring-framework/docs/{spring-version}"
    - docs-spring-framework: '{docs-site}/spring-framework/docs/{spring-version}'
@@ -148,14 +148,25 @@
     +spring-framework-api-kdoc: '{spring-framework-docs-root}/{spring-version}/kdoc-api'
     +spring-framework-reference: '{spring-framework-docs-root}/{spring-version}/reference'
 </code></pre>
-            <p> Several links are relocated into  asciidoctor attributes  for example 'https://spring.io' is 
-                relocated to the asciidoctor. Sample code patch from line 23 <a href="https://github.com/spring-projects/spring-framework/commit/856740296938612af9cd9564eee72c456fec3e10" target="blank">link</a>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>  Sample code patch from line 23 <a href="https://github.com/spring-projects/spring-framework/commit/856740296938612af9cd9564eee72c456fec3e10" target="blank">link</a>
 </p>
-            
+       <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Parameterize Links</em> involves restructuring hardcoded or fragmented URLs into parameterized or consistent formats using placeholders or templates. This refactoring consolidates related links into a uniform structure, improving readability, maintainability, and reducing duplication or inconsistency.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Maintainability:</strong> Centralizing the link structure with placeholders (e.g., <code>{spring-version}</code> or <code>{docs-site}</code>) allows easy updates in a single place, avoiding repetitive changes.</li>
+    <li><strong>Reduced Duplication:</strong> Parameterization eliminates the need to hardcode similar URLs multiple times, promoting reuse and consistency.</li>
+    <li><strong>Enhanced Readability:</strong> A structured and organized approach makes the relationships between URLs clearer and easier to understand.</li>
+    <li><strong>Simplified Future Changes:</strong> Adding or updating links becomes more efficient, reducing the risk of introducing errors across the codebase.</li>
+</ul>
+     
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
