@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Iteration-Based Retrieval with Switch Expression</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Iteration-Based Retrieval with Switch Expression</h1>
     </header>
     <nav>
-       <ul>
+       <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,7 +128,7 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Iteration-Based Retrieval with Switch Expression</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Iteration-Based Retrieval with Switch Expression</h2>
             <pre><code>
       -  private static String getPropagationBehaviorName(int propagationBehavior) {
 	-	for (Map.Entry<String, Integer> entry : propagationConstants.entrySet()) {
@@ -149,13 +149,26 @@
 		+};
 	}
         </code></pre>
-            <P>The refactoring replaces map entry traversal with switch expressions, enhancing code readability and potentially improving performance by avoiding unnecessary iteration over map entries. 
+            <P style="font-family: 'Times New Roman', Times, serif;"><strong>Reference</strong>
             Sample code patch from line 335 <a href="https://github.com/spring-projects/spring-framework/commit/bcff7d74cd8745dea9fd80839bceb11f850bf3f3" target="blank">link</a></P>
              
-        </section>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Replace Iteration-Based Retrieval with Switch Expression</em> involves replacing a loop that iterates through a collection or map to retrieve a matching value with a concise and expressive <code>switch</code> expression for known cases.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Readability:</strong> <code>Switch</code> expressions clearly outline all possible cases, making the code easier to read and understand.</li>
+    <li><strong>Reduced Complexity:</strong> Eliminates the need for iterative constructs, making the logic more straightforward and compact.</li>
+     <li><strong>Error Prevention:</strong> With a <code>switch</code> expression, missing cases can be flagged by the compiler if <code>default</code> is omitted or exhaustive coverage is required, improving safety.</li>
+    <li><strong>Modern Language Features:</strong> Leveraging <code>switch</code> expressions aligns the code with modern Java language practices, making it more maintainable and idiomatic.</li>
+</ul>
+
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
