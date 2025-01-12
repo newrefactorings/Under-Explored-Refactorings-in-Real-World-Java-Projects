@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Array with List</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Array with List</h1>
     </header>
     <nav>
         <ul>
@@ -128,20 +128,30 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Array with List</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Array with List</h2>
             <pre><code>
        - private String applicationListeners[] = new String[0];
 
       - private final Object applicationListenersLock = new Object();
       + private CopyOnWriteArrayList<String> applicationListeners = new CopyOnWriteArrayList<>();
     </code></pre>
-            <P>On this patch an array was replace with an array list.This qualifies to be a refactoring because it enhances the clarity, conciseness, and potential performance of the code by replacing array-based collections with a more suitable collection type for single elements
-            Sample code patch from line 203 <a href="https://github.com/apache/tomcat/commit/9c09f9abfb60910b054005968e0dd359ae2a1dd8" target="blank">link</a></P>
+            <P style="font-family: 'Times New Roman', Times, serif;"><strong>Refence:</strong> Sample code patch from line 203 <a href="https://github.com/apache/tomcat/commit/9c09f9abfb60910b054005968e0dd359ae2a1dd8" target="blank">link</a></P>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
+<em>Replace Array with List</em> involves replacing an array with a <code>List</code> implementation, such as <code>CopyOnWriteArrayList</code>, to manage a collection of elements more flexibly and with additional functionality provided by the <code>List</code> API.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Thread-Safety:</strong> Using a <code>CopyOnWriteArrayList</code> ensures safe concurrent access, eliminating the need for explicit synchronization, as it handles thread-safe modifications internally.</li>
+    <li><strong>Enhanced Flexibility:</strong> Lists offer a richer API compared to arrays, including methods for adding, removing, or querying elements without manual resizing or copying.</li>
+    <li><strong>Code Simplification:</strong> By replacing arrays with lists, developers can reduce the complexity of managing the collection, improving code readability and maintainability.</li>
+</ul>
+
            
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
