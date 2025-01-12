@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Wrapper Object with Primitive</h1>
+        <h1  style="font-family: 'Times New Roman', Times, serif;">Replace Wrapper Object with Primitive</h1>
     </header>
     <nav>
-        <ul>
+        <ul  style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,17 +128,30 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Wrapper Object with Primitive</h2>
+            <h2  style="font-family: 'Times New Roman', Times, serif;">Replace Wrapper Object with Primitive</h2>
              <pre><code>
          -  Long expectedSumPreviousBucket = Long.MIN_VALUE; // start value, gets
            + long expectedSumPreviousBucket = Long.MIN_VALUE; // start value, gets
         </code></pre>
-            <p>Primitive double (long) replaced Double (Long) for a simpler more predictable code. Sample code patch from line 221 (DerivativeAggregatorTests.Java) <a href="https://github.com/elastic/elasticsearch/commit/850e88c5894203d23cd29ed770207768c0c5ff60" target="blank">link</a>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>Sample code patch from line <a href="https://github.com/elastic/elasticsearch/commit/850e88c5894203d23cd29ed770207768c0c5ff60" target="blank">link</a>
       </p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Replace Wrapper Object with Primitive</em> involves replacing the usage of a wrapper object (e.g., <code>Long</code>, <code>Integer</code>, <code>Boolean</code>) with its corresponding primitive type (e.g., <code>long</code>, <code>int</code>, <code>boolean</code>) in cases where null values and additional functionalities of the wrapper are not required.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Simplified Code:</strong> Using primitives reduces complexity when null handling or additional wrapper-specific methods are unnecessary.</li>
+    <li><strong>Avoiding Null-Related Bugs:</strong> Replacing wrappers with primitives eliminates the possibility of null pointer exceptions.</li>
+    <li><strong>Streamlined Usage:</strong> Primitives are simpler to use and integrate better with basic operations, improving code readability and maintainability.</li>
+</ul>
+
+        
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p  style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
