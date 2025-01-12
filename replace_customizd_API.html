@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>RReplace Customized Methods with API</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">RReplace Customized Methods with API</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,7 +128,7 @@
     </nav>
     <main>
         <section>
-            <h2>Replace Customized Methods with API</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Customized Methods with API</h2>
             <pre><code>
      public Mono<ServerResponse> transferTo(ServerRequest request) {
 			return request.body(BodyExtractors.toParts())
@@ -140,12 +140,24 @@
 				.flatMap(tempFile ->
 				part.transferTo(tempFile)
         </code></pre>
-            <p>The operator .filter(FilePart.class::isInstance) was replaced with  .ofType(FilePart.class) which is an inbuilt operator. This makes code easy concise and easy to maintain. This replacement does not cause any change to the external behaviour of the code.
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
           Sample code patch from line 243 <a href="https://github.com/spring-projects/spring-framework/commit/d96a63944c3d6586dd2c22bd086989d26a3235c8" target="blank">link</a></p>
-        </section>
+        
+	<p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
+<em>Replace Customized Method with API</em> involves replacing a custom or manually implemented functionality with an existing API method that provides the same or similar behavior in a more standardized and efficient way.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Leverage Standard Libraries:</strong> Using an existing API method ensures robust and well-tested functionality, reducing the potential for bugs or errors in custom implementations.</li>
+    <li><strong>Improved Readability:</strong> Standard APIs are often more concise and familiar to other developers, making the code easier to read and understand.</li>
+    <li><strong>Maintenance Simplicity:</strong> Standardized methods are supported by the API provider, reducing the need for maintaining custom code over time.</li>
+    </ul>
+
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
