@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Combine Enum with Comparator</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Combine Enum with Comparator</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="combine-enum">
-            <h2>Combine Enum with Comparator</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Combine Enum with Comparator</h2>
             <pre><code> 
         - allSnapshotsSorted(allSnapshotNames, repoName, GetSnapshotsRequest.SortBy.NAME, order, includeIndexNames),
          -   GetSnapshotsRequest.SortBy.NAME,
@@ -145,15 +145,27 @@
             order
         ); 
 </code></pre>
-            <p>This refactoring moves the sort key enum to the top level and replaces one of the`switch` 
-                statements with a method on the enum instances. Sample code patch from line 104
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>Sample code patch from line 104
                 <a href="https://github.com/elastic/elasticsearch/commit/1fae3e75017ab831eab5ff30029bc97ebd52fe82" target="blanket">link</a>
 </p>
             
+       <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Combine Enum with Comparator</em> involves integrating an enum with its corresponding comparator logic, allowing each enum constant to define its own comparison behavior. This eliminates the need for separate comparators and makes the code more cohesive and easier to maintain.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Maintainability:</strong> Encapsulating comparison logic within the enum itself makes it easier to manage and update when new sorting criteria are introduced.</li>
+    <li><strong>Increased Readability:</strong> Reduces the complexity of having separate comparators by tying the sorting logic directly to the enum values, making the code more intuitive.</li>
+    <li><strong>Eliminates Redundancy:</strong> Consolidates related logic into a single location, avoiding duplication of comparator implementations across different parts of the codebase.</li>
+    <li><strong>Extensibility:</strong> Adding a new sorting behavior becomes straightforward by simply updating the enum, without needing to modify other parts of the code.</li>
+</ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
