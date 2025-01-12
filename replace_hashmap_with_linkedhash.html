@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace HashMap with LinkedHashMap</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace HashMap with LinkedHashMap</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -128,7 +128,7 @@
     </nav>
     <main>
         <section>
-            <h2>Replace HashMap with LinkedHashMap</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace HashMap with LinkedHashMap</h2>
             <pre><code>
        - Map<Class<? extends Annotation>, List<FrameworkMethod>> methodsForAnnotations = new HashMap<Class<? extends Annotation>, List<FrameworkMethod>>();
         - Map<Class<? extends Annotation>, List<FrameworkField>> fieldsForAnnotations = new HashMap<Class<? extends Annotation>, List<FrameworkField>>();
@@ -138,13 +138,25 @@
                 new LinkedHashMap<Class<? extends Annotation>, List<FrameworkField>>();      
 
         </code></pre>
-                    <p>The introduced changed ensured that the order of elements is maintained according to their insertion order by replacing a HashMap with a LinkedHashMap, which is often beneficial for predictable iteration and debugging.
+                    <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
                     Sample code patch from line 46 <a href="https://github.com/junit-team/junit4/commit/c75dcc28810aeb1c918ee7430981b31f41742ea7" target="blank">link</a></p>
-            
-        </section>
+            <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Replace HashMap with LinkedHashMap</em> involves substituting a <code>HashMap</code> with a <code>LinkedHashMap</code> to maintain the order of entries based on their insertion sequence.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Preserve Insertion Order:</strong> <code>LinkedHashMap</code> retains the order in which entries are added, making it suitable when predictable iteration order is required.</li>
+    <li><strong>Improved Readability:</strong> Preserving insertion order can make the data more human-readable and easier to debug or analyze.</li>
+    <li><strong>Enhanced Consistency:</strong> In cases where the order of elements is significant (e.g., when iterating over annotations and their associated methods or fields), a <code>LinkedHashMap</code> provides a consistent and reliable structure.</li>
+    </ul>
+
+        
+                </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
