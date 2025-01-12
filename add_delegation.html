@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Add Delegation for Super Class's Constructor</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Add Delegation for Super Class's Constructor</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="add-delegation">
-            <h2>Add Delegation for Super Class's Constructor</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Add Delegation for Super Class's Constructor</h2>
              <pre><code>
     		public Http11Nio2Protocol() {
       -  super(new Nio2Endpoint());
@@ -147,12 +147,23 @@
     +    super(endpoint);
     }
         </code></pre>
-            <p>A new constructor in both Http11Nio2Protocol and Http11NioProtocol classes is introduced. The new constructors accept a custom endpoint (Nio2Endpoint or NioEndpoint, respectively) as an argument. The existing no-argument constructors are modified to call the new constructors, passing a default endpoint instance. 
-                This change makes it easier to use custom endpoints when instantiating these protocol classes, enhancing flexibility and configurability. Thus, making this a refactoring. Sample code patch from line 35 <a href="https://github.com/apache/tomcat/commit/992bf9219b33d8ac2e694b44f8cb451c425441c1" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;"> <strong>Reference:</strong> Sample code patch from line 35 <a href="https://github.com/apache/tomcat/commit/992bf9219b33d8ac2e694b44f8cb451c425441c1" target="blank">link</a></p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Add Delegation for Superclass's Constructor</em> involves introducing an overloaded constructor in a subclass that explicitly delegates to the constructor of the superclass. This ensures proper initialization and allows more flexible instantiation of the subclass by providing additional constructor options.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Flexibility:</strong> Adding a delegated constructor allows the subclass to accommodate different initialization patterns or dependencies while still leveraging the functionality of the superclass.</li>
+    <li><strong>Code Reusability:</strong> By delegating to the superclass's constructor, the code avoids duplication of initialization logic, ensuring consistency and maintainability.</li>
+    <li><strong>Enhanced Readability:</strong> Making the delegation explicit clarifies the flow of object construction and ensures that all necessary setup from the superclass is performed.</li>
+  </ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
