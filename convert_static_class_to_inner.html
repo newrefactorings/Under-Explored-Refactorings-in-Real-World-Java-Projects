@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Convert Static Nested Class to Inner Class</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Convert Static Nested Class to Inner Class</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,21 +136,32 @@
     </nav>
     <main>
         <section id="convert-static">
-            <h2>Convert Static Nested Class to Inner Class</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Convert Static Nested Class to Inner Class</h2>
              <pre><code> 
       - static final class Search {
       +	final class Search {
 		static final Predicate<Class<?>> always = clazz -> true;                
 </code></pre>
-         <p>By removing the static modifier, the Search class becomes an inner class, which means it is 
-             now associated with an instance of the enclosing class and can access the 
-             instance members of the enclosing class. This makes the code simpler and concise. Sample code patch
+         <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch
              line 510 <a href="https://github.com/spring-projects/spring-framework/commit/eafbcfd38526c0bb62200c334fa09ea4b6cf6c75" target="blanket">link</a>
 </p>   
-        </section>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Convert Static Nested Class to Inner Class</em> involves changing a static nested class into a non-static inner class, making it an instance-level class with an implicit reference to its enclosing class. This refactoring is performed when the nested class depends on the state or behavior of its enclosing class.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Encapsulation of Context:</strong> An inner class has access to the instance variables and methods of its enclosing class, allowing it to operate in the context of the enclosing class without requiring additional references or parameters.</li>
+    <li><strong>Improved Readability:</strong> This change can make the relationship between the inner class and its enclosing class more explicit and intuitive.</li>
+    <li><strong>Reduction in Boilerplate:</strong> Eliminates the need to pass the enclosing class instance to the nested class explicitly, simplifying code.</li>
+    <li><strong>Logical Grouping:</strong> When the nested class logically belongs to an instance of its enclosing class, converting it to an inner class improves design consistency.</li>
+</ul>
+
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
