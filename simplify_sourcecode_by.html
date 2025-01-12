@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Simplify Source Code by Using Existing Data Type</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Simplify Source Code by Using Existing Data Type</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,18 +136,28 @@
     </nav>
     <main>
         <section id="source-code">
-            <h2>Simplify Source Code by Using Existing Data Type</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Simplify Source Code by Using Existing Data Type</h2>
             <pre><code> 
     - private String applicationListeners[] = new String[0];
    - private final Object applicationListenersLock = new Object();
    + private CopyOnWriteArrayList<String> applicationListeners = new CopyOnWriteArrayList<>();
 </code></pre>
-            <p>applicationListeners variable is initially declared as an array of strings, but it is later replaced with a CopyOnWriteArrayList. This change was introduced to avoid using a handcrafted approach but use an approach that is already available.
-                It does not cause any functional changes. Sample code patch from 203 <a href="https://github.com/apache/tomcat/commit/9c09f9abfb60910b054005968e0dd359ae2a1dd8" target="target">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from 203 <a href="https://github.com/apache/tomcat/commit/9c09f9abfb60910b054005968e0dd359ae2a1dd8" target="target">link</a></p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Simplify Source Code by Using Existing Data Type</em> involves replacing a custom or manually managed data structure (e.g., an array with a lock) with a more appropriate, built-in data type or collection class (e.g., <code>CopyOnWriteArrayList</code>) that simplifies code, improves readability, and leverages built-in features for thread-safety or other functionality.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Maintainability:</strong> Using a built-in data type reduces the complexity of managing custom code, making it easier to read, maintain, and extend.</li>
+     <li><strong>Reduced Boilerplate Code:</strong> Built-in types eliminate the need to manually implement synchronization mechanisms or other functionalities, reducing boilerplate code.</li>
+    </ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
