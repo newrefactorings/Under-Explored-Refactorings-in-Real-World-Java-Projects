@@ -115,10 +115,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Replace Array with Singletonlist</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Array with Singletonlist</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -133,14 +133,21 @@
        - return Arrays.asList(cause);
         + return singletonList(cause);
         </code></pre>
-            <p>Using Collections.singletonList simplifies the creation of a single-element list compared to using Arrays.asList. The latter involves more overhead and is less concise when dealing with a single element.
-                This qualifies to be a refactoring because it enhances the clarity, conciseness, and potential performance of the code by replacing array-based collections with a more suitable collection type for single elements.
-            Sample code patch from line 74,75 <a href="https://github.com/junit-team/junit4/commit/17a2f11783fa8e731fe49cf638d51c78468c8c25" target="blank">link</a></p>
-            
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 74,75 <a href="https://github.com/junit-team/junit4/commit/17a2f11783fa8e731fe49cf638d51c78468c8c25" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Refactoring Definition:</strong><br>
+<em>Replace Array with Singleton List</em> involves replacing an array wrapped in a list using <code>Arrays.asList</code> with a more concise <code>singletonList</code>, which directly creates an immutable list containing a single element.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Conciseness:</strong> <code>singletonList</code> is a direct and clearer way to represent a list with exactly one element, reducing verbosity and improving readability.</li>
+    <li><strong>Immutability:</strong> The <code>singletonList</code> method produces an immutable list, ensuring that the list cannot be modified, which can help avoid unintended side effects.</li>
+    </ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
