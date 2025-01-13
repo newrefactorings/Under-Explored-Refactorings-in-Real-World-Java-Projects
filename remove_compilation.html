@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Unnecessary Compilation Dependency</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Compilation Dependency</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,16 +136,30 @@
     </nav>
     <main>
         <section id="compilation">
-            <h2>Remove Unnecessary Compilation Dependency</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Compilation Dependency</h2>
             <pre><code>
    &lt;mssql.version&gt;6.2.1.jre7&lt;/mssql.version&gt;
   - &lt;okhttp.version&gt;2.7.5&lt;/okhttp.version&gt;
     </code></pre> 
-            <p>The unused dependency was removed since it was no longer used. Sample code patch from line 134 <a href="https://github.com/apache/hadoop/commit/e09e81abe47abb31131e54426febda3e3f09e007" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 134 <a href="https://github.com/apache/hadoop/commit/e09e81abe47abb31131e54426febda3e3f09e007" target="blank">link</a></p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Unnecessary Compilation Dependency</em> involves identifying and eliminating dependencies that are not required for the compilation or runtime of a project, ensuring that the dependency list is minimal and relevant.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Reduces Build Complexity:</strong> Eliminating unused dependencies simplifies the project configuration and reduces dependency management overhead.</li>
+   
+    <li><strong>Increases Maintainability:</strong> Keeps the codebase clean and focused by only including dependencies that are actively used.</li>
+   
+</ul>
+
+        
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
