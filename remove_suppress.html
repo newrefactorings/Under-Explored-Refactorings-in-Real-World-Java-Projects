@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Suppress Warning Annoation</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Suppress Warning Annoation</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,18 +136,30 @@
     </nav>
     <main>
         <section id="remove_suppress">
-            <h2>Remove Suppress Warning Annoation</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Suppress Warning Annoation</h2>
             <pre><code>
    -@SuppressWarnings("restriction")
 public class PrintableResult {
 	public static PrintableResult testResult(Class<?> type) {
 		return new PrintableResult(type);
     </code></pre>
-            <p>Unused suppress warning annotations were removed. Sample code patch from line 15 <a href="https://github.com/junit-team/junit4/commit/e727dd6b1cb2caa1699da3b2df7625c9554adc36" target="blank">link</a></p>
-        </section>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 15 <a href="https://github.com/junit-team/junit4/commit/e727dd6b1cb2caa1699da3b2df7625c9554adc36" target="blank">link</a></p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Suppress Warning Annotation</em> involves eliminating the <code>@SuppressWarnings</code> annotation when it is no longer necessary, such as when the code has been refactored to avoid the warning it was suppressing, or when the warning is deemed acceptable and does not require suppression.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improves Code Clarity:</strong> Removing unnecessary annotations makes the codebase cleaner and easier to read.</li>
+     <li><strong>Avoids Misuse of Suppression:</strong> Prevents overlooking potential issues by suppressing warnings globally or prematurely.</li>
+    <li><strong>Enhances Maintainability:</strong> Reduces the burden of maintaining suppression annotations, especially when the underlying issue has already been addressed.</li>
+</ul>
+
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
