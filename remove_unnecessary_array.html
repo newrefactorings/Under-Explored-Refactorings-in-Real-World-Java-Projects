@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Unnecessary Array Creation</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Array Creation</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,19 +136,32 @@
     </nav>
     <main>
         <section id="unnecessary">
-            <h2>Remove Unnecessary Array Creation</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Array Creation</h2>
             <pre><code>
    public ErrorReportingRunner(Class<?> testClass, Throwable cause) {
        - this(cause, new Class<?>[] { testClass });
        + this(cause, testClass);
     }
     </code></pre>
-            <p>The explicit array creation this(cause, new Class<?>[] { testClass }) is removed because the single-element array is equivalent to the element itself for the varargs parameter that they are assigned to. Sample code patch from line
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line
             19 <a href="https://github.com/junit-team/junit4/commit/17a2f11783fa8e731fe49cf638d51c78468c8c25" target="blank">link</a></p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Unnecessary Array Creation</em> involves replacing the creation of an array when a single element is sufficient, by directly passing the element to the method or constructor.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improves Code Simplicity:</strong> Reduces unnecessary complexity in the code by avoiding redundant array creation.</li>
+     <li><strong>Readability:</strong> Simplifies the method call or constructor invocation, making the code easier to understand.</li>
+   
+</ul>
+
+        
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
