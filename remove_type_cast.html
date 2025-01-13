@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Unnecessary Type Cast</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Type Cast</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,19 +136,30 @@
     </nav>
     <main>
         <section id="type-cast">
-            <h2>Remove Unnecessary Type Cast</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Type Cast</h2>
             <pre><code>
   	static CloseOp getInstance(OpInstanceCache cache) {
      - return (CloseOp)cache.get(OP_CLOSE);
      + return cache.get(OP_CLOSE);
     }
     </code></pre>
-            <p>All redundant casts are removed to avoid duplication and to make the code concise. Sample code patch from line 826 <a href="https://github.com/apache/hadoop/commit/895f7c51fd1031e0674c30e6daca27531ad4a3db" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 826 <a href="https://github.com/apache/hadoop/commit/895f7c51fd1031e0674c30e6daca27531ad4a3db" target="blank">link</a></p>
             
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Unnecessary Type Cast</em> eliminates explicit type casting from code when the compiler can infer the type implicitly without any ambiguity.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Reduces Redundancy:</strong> Removing unnecessary type casts simplifies the code and avoids repetitive or redundant declarations.</li>
+    <li><strong>Improves Readability:</strong> The code becomes more concise, making it easier for developers to understand and maintain.</li>
+   </ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
