@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Overriding Method that Equals to its Overriden Method</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Overriding Method that Equals to its Overriden Method</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="overriden">
-            <h2>Remove Overriding Method that Equals to its Overriden Method</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Overriding Method that Equals to its Overriden Method</h2>
              <pre><code>
  return ((JarURLConnection) resourceURL.openConnection()).getJarFile();
         }
@@ -152,12 +152,24 @@
     }
 }
     </code></pre>
-            <p>The getJarEntry() method in the CachedResource class was overriding a method from its superclass.The override was unnecessary because it either returned null if getEntryName() was null, or it simply called the superclass's getJarEntry() method without adding any additional functionality.
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
             Sample code patch from line 625 <a href="https://github.com/apache/tomcat/commit/2236738fb2597073329ea74c84631726f5a7f7b2" target="blank">link</a></p>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Overriding Method that Equals to its Overridden Method</em> involves deleting an overriding method in a subclass when it is identical to or redundant with the behavior of the method in the superclass.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Eliminates Redundancy:</strong> Avoids duplicating code that already exists and is inherited from the superclass, adhering to the DRY (Don't Repeat Yourself) principle.</li>
+    <li><strong>Improves Maintainability:</strong> Reduces clutter in the codebase, making it easier to understand and maintain.</li>
+     <li><strong>Minimizes Risk of Errors:</strong> Prevents the possibility of divergence between the overridden and inherited method in future updates.</li>
+</ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
