@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Duplicate Condition Checks</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Duplicate Condition Checks</h1>
     </header>
     <nav>
         <ul>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="duplicate-condition">
-            <h2>Remove Duplicate Condition Checks</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Duplicate Condition Checks</h2>
              <pre><code>
        -if (!componentScans.isEmpty() &&
 		-		!this.conditionEvaluator.shouldSkip(sourceClass.getMetadata(), ConfigurationPhase.REGISTER_BEAN)) {
@@ -145,12 +145,24 @@
 				// The config class is annotated with @ComponentScan -> perform the scan immediately
 				Set<BeanDefinitionHolder> scannedBeanDefinitions =
     </code></pre>
-            <p>Duplicate conditional checks were removed to avoid duplication and thus, making this removal a refactoring. Sample code patch from line 316 <a href="https://github.com/spring-projects/spring-framework/commit/871f705bca8da88c95966b9ab37d9aefa0dd24ca" target="blank">link</a></p>
-            
-        </section>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 316 <a href="https://github.com/spring-projects/spring-framework/commit/871f705bca8da88c95966b9ab37d9aefa0dd24ca" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Duplicate Condition Checks</em> involves eliminating redundant or repeated condition evaluations within a code block to streamline the logic and improve performance.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+       <li><strong>Simplified Logic:</strong> Makes the code cleaner and easier to read by consolidating checks.</li>
+    <li><strong>Reduced Redundancy:</strong> Prevents potential errors or inconsistencies caused by maintaining duplicate conditions.</li>
+    <li><strong>Improved Maintainability:</strong> Consolidated checks make the codebase easier to update and debug.</li>
+</ul>
+
+       
+	</section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
