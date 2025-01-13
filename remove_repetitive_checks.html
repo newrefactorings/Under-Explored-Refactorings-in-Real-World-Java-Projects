@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Repetitive Checking</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Repetitive Checking</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="repetitive">
-            <h2>Remove Repetitive Checking</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Repetitive Checking</h2>
             <pre><code>
     @Override
     public void setContentLength(int len) {
@@ -153,13 +153,25 @@
             return;
         }
     </code></pre>
-            <p>The method checkFacade() was called at the beginning of both getOutputStream() and getWriter() methods.These calls were removed, beacuse it would be called by the following condition check (i.e. isCommitted()).
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>
             Sample code patch from line 136 <a href="https://github.com/apache/tomcat/commit/ff53af8b692c179606404d00344511ea7ca8eae3" target="blank">link</a></p>
             
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Repetitive Checking</em> involves eliminating redundant validation or condition checks that are repeatedly performed in the same method or across similar methods, especially when the checks can be centralized or deemed unnecessary in certain contexts.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improves Code Clarity:</strong> Removes redundant logic, making the code more concise and easier to read.</li>
+    <li><strong>Enhances Maintainability:</strong> Centralizing checks or eliminating unnecessary ones reduces duplication, simplifying future changes.</li>
+     <li><strong>Avoids Logical Redundancy:</strong> Prevents redundant validations that may not contribute additional value, streamlining method functionality.</li>
+</ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
