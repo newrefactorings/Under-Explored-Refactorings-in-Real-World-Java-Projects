@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Duplication in Constructor by Delegating to Another Constructor</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Duplication in Constructor by Delegating to Another Constructor</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="duplication">
-            <h2>Remove Duplication in Constructor by Delegating to Another Constructor</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Duplication in Constructor by Delegating to Another Constructor</h2>
             <pre><code>
 public Builder(String context, Configuration conf) {
      - if (isValid(context)) {
@@ -150,12 +150,25 @@ public Builder(String context, Configuration conf) {
     }
 
     </code></pre>
-            <p>The refactoring eliminated duplicate code in the CallerContext.Builder constructors by making one constructor call another, thereby reusing code and reducing redundancy. Sample code patch from line 143 <a href="https://github.com/apache/hadoop/commit/37bff63c0ffa506cc8b13bee9fd3ae5b9f3075c9" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong> Sample code patch from line 143 <a href="https://github.com/apache/hadoop/commit/37bff63c0ffa506cc8b13bee9fd3ae5b9f3075c9" target="blank">link</a></p>
             
+        <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Duplication in Constructor by Delegating to Another Constructor</em> involves eliminating redundant initialization logic by delegating the constructor's responsibilities to another constructor that already performs the required setup.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Avoids Code Duplication:</strong> Prevents repetitive logic in multiple constructors, adhering to the DRY (Don't Repeat Yourself) principle.</li>
+    <li><strong>Improved Readability:</strong> Makes the codebase cleaner and easier to understand by consolidating logic in a single constructor.</li>
+    <li><strong>Simplifies Maintenance:</strong> Reduces the risk of inconsistencies or errors when updating constructor logic, as changes are made in one place.</li>
+    <li><strong> Reusability:</strong> Promotes reusing existing constructors, enhancing modularity and code cohesion.</li>
+</ul>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy;2025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
