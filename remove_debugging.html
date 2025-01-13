@@ -123,10 +123,10 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1>Remove Debug Logging Notes</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Debug Logging Notes</h1>
     </header>
     <nav>
-        <ul>
+        <ul style="font-family: 'Times New Roman', Times, serif;">
             <li><a href="index.html#replacement">Replacement Refactorings</a></li>
             <li><a href="index.html#modification">Modification Refactorings</a></li>
             <li><a href="index.html#addition">Addition Refactorings</a></li>
@@ -136,7 +136,7 @@
     </nav>
     <main>
         <section id="logging-notes">
-            <h2>Remove Debug Logging Notes</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Debug Logging Notes</h2>
              <pre><code>
    - parameters.fallToDebug=\n\
 -\ Note: further occurrences of Parameter errors will be logged at DEBUG level.
@@ -147,13 +147,23 @@ parameters.maxCountFail=More than the maximum number of request parameters (GET 
 -parameters.multipleDecodingFail=Character decoding failed. A total of [{0}] failures were detected but only the first was logged. Enable debug level logging for this logger to log all failures.
 parameters.noequal=Parameter starting at position [{0}] and ending at position [{1}] with a value of [{2}] was not followed by an ''='' character
         </code></pre>
-            <p>The change involved removing redundant debug logging notes from the localized properties files, thereby simplifying the error messages and possibly improving clarity and maintainability of these localization resources.
-            Sample code patch from line 35 <a href="https://github.com/apache/tomcat/commit/7c4e89fc00cd4d377133430f68c16bea11bc16bd" target="blank">link</a></p>
-            
+            <p style="font-family: 'Times New Roman', Times, serif;"><strong>Reference:</strong>Sample code patch from line 35 <a href="https://github.com/apache/tomcat/commit/7c4e89fc00cd4d377133430f68c16bea11bc16bd" target="blank">link</a></p>
+            <p style="font-family: 'Times New Roman', Times, serif;">
+    <strong>Refactoring Definition:</strong><br>
+    <em>Remove Debugging Notes</em> involves eliminating inline comments or messages in code that provide instructions or notes about logging or debugging. These notes are typically redundant, obsolete, or unnecessarily verbose, and their removal streamlines the code or messages.
+</p>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
+<ul style="font-family: 'Times New Roman', Times, serif;">
+    <li><strong>Improved Clarity:</strong> Removing redundant debugging notes reduces clutter, making the code or messages easier to read and maintain.</li>
+     <li><strong>Consistency:</strong> Eliminating outdated or specific debugging notes helps maintain a consistent tone and style in messages across the codebase.</li>
+</ul>
+
+       
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Emerging Refactorings</p>
+        <p style="font-family: 'Times New Roman', Times, serif;">&copy; 025 Under-explored Refactorings in Real-World Java Projects</p>
     </footer>
 </body>
 </html>
