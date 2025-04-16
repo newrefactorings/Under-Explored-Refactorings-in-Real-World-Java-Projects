@@ -130,7 +130,8 @@
         <ul>           
             <li  style="font-family: 'Times New Roman', Times, serif;"><a href="#replacement">Replace Refactorings</a></li>
             <li  style="font-family: 'Times New Roman', Times, serif;"><a href="#modification">Modification Refactorings</a></li>
-            <li  style="font-family: 'Times New Roman', Times, serif;"><a href="#addition">Addition Refactorings</a></li>          
+            <li  style="font-family: 'Times New Roman', Times, serif;"><a href="#addition">Addition Refactorings</a></li> 
+             <li  style="font-family: 'Times New Roman', Times, serif;"><a href="#merge">Merge Refactorings</a></li> 
             <li  style="font-family: 'Times New Roman', Times, serif;"><a href="#remove">Remove Refactorings</a></li> 
                       
         </ul>
@@ -160,20 +161,22 @@
              </ul>
         </section>
         <section id="modification">
-            <h2  style="font-family: 'Times New Roman', Times, serif;">Modification Refactorings</h2>
-            <p  style="font-family: 'Times New Roman', Times, serif;">Modification refactorings change the existing code to improve its design, clarity, or efficiency without adding new functionality or removing existing functionality.The following list presents the observed under-explored modification refactorings in real-world Java projects. For each refactoring, we provide the definition and the rationale behind it.</p>
+            <h2  style="font-family: 'Times New Roman', Times, serif;">Interface Protocol Refactorings</h2>
+            <p  style="font-family: 'Times New Roman', Times, serif;">Interface protocol refactorings are code operations that encompass changes that directly affect the method interface, including its signature, parameter list, or behavioral contract.</p>
                  <ul class="refactorings-list">        
                 <!--<li  style="font-family: 'Times New Roman', Times, serif;"><a href="turn_local_variable_into.html">Turn local variable into field</a></li> -->               
                 <!--<li><a href="increase_field_visibility.html">Increase field visibility</a></li>-->                
                 <li  style="font-family: 'Times New Roman', Times, serif;"><a href="loosen_parameter_type.html">Loosen parameter’s type limitations</a></li>
-                <li  style="font-family: 'Times New Roman', Times, serif;"><a href="avoid_unnecessary_action.html">Avoid unnecessary actions by precondition checking</a></li>
-                <li  style="font-family: 'Times New Roman', Times, serif;"><a href="combine_enum_with.html">Combine  enum with comparator</a></li>                
+               <!-- <li  style="font-family: 'Times New Roman', Times, serif;"><a href="avoid_unnecessary_action.html">Avoid unnecessary actions by precondition checking</a></li>-->
+                <!--<li  style="font-family: 'Times New Roman', Times, serif;"><a href="combine_enum_with.html">Combine  enum with comparator</a></li> -->               
                 <!--<li  style="font-family: 'Times New Roman', Times, serif;"><a href="convert_static_class_to_inner.html">Convert static nested class to inner class</a></li>-->
                 <!--<li><a href="decrease_field_visibility.html">Decrease field visibility</a></li>-->                
-                <li  style="font-family: 'Times New Roman', Times, serif;"><a href="simplify_sourcecode_by.html">Simplify source code by reusing existing data type</a> </li>
+                <!--<li  style="font-family: 'Times New Roman', Times, serif;"><a href="simplify_sourcecode_by.html">Simplify source code by reusing existing data type</a> </li>-->
                  <!--<li> <a href="parameterize_links.html">Parameterize links</a></li>-->   
                  </ul>
                     </section>
+
+        
         <section id="addition">
             <h2  style="font-family: 'Times New Roman', Times, serif;">Addition Refactorings</h2>
             <p  style="font-family: 'Times New Roman', Times, serif;">Addition refactorings involve adding new functionality to the existing codebase. This might include introducing new classes, methods, or components to enhance the system without altering its existing behavior. The goal is to extend the system's capabilities in a way that is maintainable and follows good design principles.
@@ -181,6 +184,16 @@
             <ul class="refactorings-list">
             <li  style="font-family: 'Times New Roman', Times, serif;"><a href="add_brackets.html">Add brackets</a></li>
             <li  style="font-family: 'Times New Roman', Times, serif;"><a href="add_delegation.html">Add delegation for super class’s constructor</a></li>
+            </ul>
+        </section>
+
+         <section id="merge">
+            <h2  style="font-family: 'Times New Roman', Times, serif;">Merge Refactorings</h2>
+            <p  style="font-family: 'Times New Roman', Times, serif;">Merge refactorings} code operations that combine multiple code elements into one to reduce redundancy and enhance cohesion.</p>
+            <ul class="refactorings-list">
+                 <li  style="font-family: 'Times New Roman', Times, serif;"><a href="combine_enum_with.html">Combine  enum with comparator</a></li>  
+            <!--<li  style="font-family: 'Times New Roman', Times, serif;"><a href="add_brackets.html">Add brackets</a></li>
+            <li  style="font-family: 'Times New Roman', Times, serif;"><a href="add_delegation.html">Add delegation for super class’s constructor</a></li>-->
             </ul>
         </section>
         
