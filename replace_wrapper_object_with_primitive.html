@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2  style="font-family: 'Times New Roman', Times, serif;">Replace Wrapper Object with Primitive</h2>
+            <!--<h2  style="font-family: 'Times New Roman', Times, serif;">Replace Wrapper Object with Primitive</h2>-->
              <pre><code>
          -  Long expectedSumPreviousBucket = Long.MIN_VALUE; // start value, gets
            + long expectedSumPreviousBucket = Long.MIN_VALUE; // start value, gets
@@ -143,11 +143,10 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Simplified Code:</strong> Using primitives reduces complexity when null handling or additional wrapper-specific methods are unnecessary.</li>
-    <li><strong>Avoiding Null-Related Bugs:</strong> Replacing wrappers with primitives eliminates the possibility of null pointer exceptions.</li>
-    <li><strong>Streamlined Usage:</strong> Primitives are simpler to use and integrate better with basic operations, improving code readability and maintainability.</li>
+    <li><strong>Simplified Code:</strong> Primitives are leaner and avoid the overhead associated with object wrappers, making the code more efficient and easier to follow.</li>
+    <li><strong>Avoiding Null-Related Bugs:</strong> Using primitives prevents <code>NullPointerException</code> risks, which can occur with uninitialized wrapper objects.</li>
+    <li><strong>Streamlined Usage:</strong> Primitives naturally integrate with arithmetic and logical operations without the need for unboxing, leading to cleaner syntax and better performance.</li>
 </ul>
-
         
         </section>
     </main>
