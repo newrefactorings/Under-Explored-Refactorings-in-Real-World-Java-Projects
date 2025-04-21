@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Arraylist with Primitive Array</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Arraylist with Primitive Array<sup>*cs</sup></h1>
     </header>
    <nav>
         <ul>           
@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Arraylist with Primitive Array</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Arraylist with Primitive Array</h2>-->
              <pre><code>
        private String[] copyArray(String[] args, int from, int to) {
        - ArrayList<String> result = new ArrayList<String>();
@@ -152,9 +152,13 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-     <li><strong>Readability and Clarity:</strong> For operations that require a fixed number of elements, arrays are a more straightforward and concise representation than dynamic lists.</li>
-    <li><strong>Type-Safety and Explicitness:</strong> Arrays clearly express the fixed size and type of the collection, reducing potential errors related to dynamic resizing or unintended additions.</li>
+    <li><strong>Performance Optimization:</strong> When the size of the collection is known in advance, using a primitive array avoids the overhead of dynamic resizing and internal boxing/unboxing in list operations.</li>
+    <li><strong>Reduced Memory Usage:</strong> Arrays require less memory than <code>ArrayList</code> objects, as they don’t include additional metadata or dynamic capacity management, which is beneficial in performance-critical code paths.</li>
+    <li><strong>Improved Clarity:</strong> Arrays more directly convey the developer’s intent to work with a fixed-size data structure, making the code easier to understand and reason about.</li>
+    <li><strong>Simplified Execution Flow:</strong> This transformation removes unnecessary steps like appending to a list and converting it back to an array—streamlining the control flow.</li>
 </ul>
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This refactoring is considered <em>context-specific</em><strong>**</strong> because it typically emerges in performance-sensitive or utility code, where the collection size is known and the need for dynamic flexibility is intentionally avoided.</p>
+
 
         </section>
     </main>
