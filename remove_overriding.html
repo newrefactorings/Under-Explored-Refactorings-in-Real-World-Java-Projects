@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Overriding Method that Equals to its Overriden Method</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Overriding Method that Equals to its Overriden Method<sup>*cs</sup></h1>
     </header>
    <nav>
         <ul>           
@@ -137,7 +137,7 @@
     </nav>
     <main>
         <section id="overriden">
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Overriding Method that Equals to its Overriden Method</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Remove Overriding Method that Equals to its Overriden Method</h2>-->
              <pre><code>
  return ((JarURLConnection) resourceURL.openConnection()).getJarFile();
         }
@@ -166,7 +166,7 @@
     <li><strong>Improves Maintainability:</strong> Reduces clutter in the codebase, making it easier to understand and maintain.</li>
      <li><strong>Minimizes Risk of Errors:</strong> Prevents the possibility of divergence between the overridden and inherited method in future updates.</li>
 </ul>
-
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This is a <em>context-specific refactoring</em> applied when an inherited method in a subclass doesn't provide any additional functionality beyond what is already provided by the superclass. This is common in object-oriented design when the subclass does not need to alter the behavior of the method from the parent class.</p>
         </section>
     </main>
     <footer>
