@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Iteration-Based Retrieval with Switch Expression</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Iteration-Based Retrieval with Switch Expression<sup>*cs</sup></h1>
     </header>
    <nav>
         <ul>           
@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Iteration-Based Retrieval with Switch Expression</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Iteration-Based Retrieval with Switch Expression</h2>-->
             <pre><code>
       -  private static String getPropagationBehaviorName(int propagationBehavior) {
 	-	for (Map.Entry<String, Integer> entry : propagationConstants.entrySet()) {
@@ -160,12 +160,13 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Improved Readability:</strong> <code>Switch</code> expressions clearly outline all possible cases, making the code easier to read and understand.</li>
-    <li><strong>Reduced Complexity:</strong> Eliminates the need for iterative constructs, making the logic more straightforward and compact.</li>
-     <li><strong>Error Prevention:</strong> With a <code>switch</code> expression, missing cases can be flagged by the compiler if <code>default</code> is omitted or exhaustive coverage is required, improving safety.</li>
-    <li><strong>Modern Language Features:</strong> Leveraging <code>switch</code> expressions aligns the code with modern Java language practices, making it more maintainable and idiomatic.</li>
+    <li><strong>Improved Readability:</strong> Clearly defines each case in a compact and structured manner, making the control flow easier to follow.</li>
+    <li><strong>Reduced Complexity:</strong> Avoids unnecessary iteration over collections, resulting in cleaner and more efficient code.</li>
+    <li><strong>Error Prevention:</strong> Helps catch unhandled cases at compile-time if exhaustive checks are enforced, improving code reliability.</li>
+    <li><strong>Modern Language Features:</strong> Aligns the code with modern Java practices (Java 14+), which encourage expressive and type-safe constructs like <code>switch</code> expressions.</li>
 </ul>
 
+<p style="font-family: 'Times New Roman', Times, serif;"><em>Note:</em> This is a <strong>context-specific</strong> refactoring, suitable when the logic deals with a fixed and known set of constants, such as propagation behaviors in a transaction definition.</p>
 	</section>
     </main>
     <footer>
