@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Extends Clause</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Extends Clause<sup>*cs</sup></h1>
     </header>
     <nav>
         <ul>           
@@ -137,7 +137,7 @@
     </nav>
     <main>
         <section id="extends">
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Extends Clause</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Extends Clause</h2>-->
              <pre><code>
   -public class TestResult extends Object {
   +public class TestResult {
@@ -163,7 +163,7 @@
     <li><strong>Avoids Redundancy:</strong> Explicitly extending <code>Object</code> is redundant because it is the default superclass for all Java classes.</li>
     <li><strong>Improves Readability:</strong> Removing the unnecessary clause simplifies the class declaration and makes the code more concise and easier to understand.</li>
     </ul>
-
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This is a <em>context-specific refactoring</em> as the removal is meaningful only in environments where such redundancy adds no functional or stylistic benefit.</p>
         </section>
     </main>
     <footer>
