@@ -151,9 +151,10 @@
             
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Flexibility in Testing:</strong> Using a <code>try-catch</code> block allows greater control and flexibility for additional assertions, such as checking the exception message or state before the exception was thrown.</li>
-    <li><strong>Improved Readability:</strong> The <code>try-catch</code> structure can make it more explicit and clear where the exception is expected to occur, aiding in test comprehension.</li>
-    <li><strong>Avoid Ambiguity:</strong> The <code>expected</code> attribute applies to the entire test method, which can be misleading if the method contains multiple statements. With <code>try-catch</code>, the exception is explicitly associated with a specific block of code.</li>
+    <li><strong>Precise Exception Targeting:</strong> The <code>expected</code> attribute applies to the entire test method, which can be misleading when multiple statements are present. This may cause false positives if the exception is thrown outside the intended scope. A <code>try-catch</code> block confines the check to the specific statement where the exception is expected.</li>
+    <li><strong>Enhanced Test Flexibility:</strong> With <code>try-catch</code>, developers can inspect the caught exception, validate the message or cause, and even assert state after partial execution. This level of control is not possible with <code>@Test(expected = ...)</code>.</li>
+    <li><strong>Alignment with Testing Best Practices:</strong> Popular testing guidelines (including in JUnit5) have moved away from the <code>expected</code> attribute, promoting the use of <code>Assertions.assertThrows</code> or structured <code>try-catch</code> logic for clearer and more maintainable tests.</li>
+    <li><strong>Real-World Evolution:</strong> This refactoring often appears in migration efforts from legacy test styles or in efforts to improve the precision of exception-based testing in large codebases where fragile tests may cause regressions.</li>
 </ul>
 
         </section>
