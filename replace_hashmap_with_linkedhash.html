@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace HashMap with LinkedHashMap</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace HashMap with LinkedHashMap<sup>*cs</sup></h1>
     </header>
    <nav>
         <ul>           
@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace HashMap with LinkedHashMap</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace HashMap with LinkedHashMap</h2>-->
             <pre><code>
        - Map<Class<? extends Annotation>, List<FrameworkMethod>> methodsForAnnotations = new HashMap<Class<? extends Annotation>, List<FrameworkMethod>>();
         - Map<Class<? extends Annotation>, List<FrameworkField>> fieldsForAnnotations = new HashMap<Class<? extends Annotation>, List<FrameworkField>>();
@@ -148,10 +148,12 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Preserve Insertion Order:</strong> <code>LinkedHashMap</code> retains the order in which entries are added, making it suitable when predictable iteration order is required.</li>
-    <li><strong>Improved Readability:</strong> Preserving insertion order can make the data more human-readable and easier to debug or analyze.</li>
-    <li><strong>Enhanced Consistency:</strong> In cases where the order of elements is significant (e.g., when iterating over annotations and their associated methods or fields), a <code>LinkedHashMap</code> provides a consistent and reliable structure.</li>
-    </ul>
+    <li><strong>Preserve Insertion Order:</strong> <code>LinkedHashMap</code> guarantees the order of entries, making it ideal when maintaining the sequence of items (like annotations and their associated methods or fields) is necessary.</li>
+    <li><strong>Improved Readability:</strong> The predictable iteration order makes the code more understandable and easier to debug, especially when handling complex objects like annotations and methods.</li>
+    <li><strong>Enhanced Consistency:</strong> For scenarios where order matters (e.g., working with annotations), the <code>LinkedHashMap</code> offers consistency that the <code>HashMap</code> does not, ensuring the map’s behavior is as expected throughout.</li>
+</ul>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This is a <em>context-specific refactoring</em> as it applies specifically to scenarios where the insertion order of entries in the map is important for the logic of the program (e.g., handling annotations in tests).</p>
 
         
                 </section>
