@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Simplify Source Code by Using Existing Data Type</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Simplify Source Code by Using Existing Data Type<sup>*cs</sup></h1>
     </header>
    <nav>
         <ul>           
@@ -137,7 +137,7 @@
     </nav>
     <main>
         <section id="source-code">
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Simplify Source Code by Using Existing Data Type</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Simplify Source Code by Using Existing Data Type</h2>-->
             <pre><code> 
     - private String applicationListeners[] = new String[0];
    - private final Object applicationListenersLock = new Object();
@@ -151,9 +151,11 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Improved Maintainability:</strong> Using a built-in data type reduces the complexity of managing custom code, making it easier to read, maintain, and extend.</li>
-     <li><strong>Reduced Boilerplate Code:</strong> Built-in types eliminate the need to manually implement synchronization mechanisms or other functionalities, reducing boilerplate code.</li>
-    </ul>
+    <li><strong>Improved Maintainability:</strong> Standard collections offer out-of-the-box solutions for common concerns like concurrency, reducing the need for custom synchronization logic.</li>
+    <li><strong>Reduced Boilerplate Code:</strong> By removing explicit locks and manual array handling, the code becomes cleaner, less error-prone, and easier to understand.</li>
+</ul>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><em><strong>Note:</strong> This is a context-specific refactoring</em>, as it is applied in a scenario requiring thread-safe listener management and benefits particularly from <code>CopyOnWriteArrayList</code>'s characteristics under low mutation and high iteration frequency.</p>
 
         </section>
     </main>
