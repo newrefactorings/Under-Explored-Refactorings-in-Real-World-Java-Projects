@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Replace Array with CollectionList</title>
+    <title>Replace Array with List</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Array with List</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Array with List</h2>-->
             <pre><code>
        - private String applicationListeners[] = new String[0];
 
@@ -143,10 +143,12 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Thread-Safety:</strong> Using a <code>CopyOnWriteArrayList</code> ensures safe concurrent access, eliminating the need for explicit synchronization, as it handles thread-safe modifications internally.</li>
-    <li><strong>Enhanced Flexibility:</strong> Lists offer a richer API compared to arrays, including methods for adding, removing, or querying elements without manual resizing or copying.</li>
-    <li><strong>Code Simplification:</strong> By replacing arrays with lists, developers can reduce the complexity of managing the collection, improving code readability and maintainability.</li>
+    <li><strong>Built-in Thread-Safety:</strong> In multithreaded environments, managing arrays with manual locks (e.g., <code>synchronized</code> blocks or separate lock objects) introduces boilerplate and potential race conditions. <code>CopyOnWriteArrayList</code> provides thread safety out-of-the-box, removing the need for explicit synchronization.</li>
+    <li><strong>API Expressiveness:</strong> Replacing arrays with a <code>List</code> gives access to a more expressive and robust collection API (e.g., <code>add()</code>, <code>remove()</code>, <code>contains()</code>), which improves clarity and reduces the risk of manual errors in index handling or resizing.</li>
+    <li><strong>Maintainability & Modernization:</strong> Arrays are low-level structures; this refactoring modernizes the code, making it more consistent with Java's collection-oriented best practices and easier to maintain as the codebase evolves.</li>
+    <li><strong>Real-World Need:</strong> This change often emerges when existing synchronization logic becomes complex or error-prone, and developers replace arrays with concurrent-safe collections to reduce maintenance overhead and potential bugs.</li>
 </ul>
+
 
            
         </section>
