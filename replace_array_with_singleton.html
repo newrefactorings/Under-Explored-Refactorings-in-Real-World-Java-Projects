@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Array with Singletonlist</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Array with Singletonlist<sup>*cs</sup></h1>
     </header>
    <nav>
         <ul>           
@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Array with Singletonlist</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Array with Singletonlist</h2>-->
             <pre><code>
        - return Arrays.asList(cause);
         + return singletonList(cause);
@@ -141,10 +141,12 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Conciseness:</strong> <code>singletonList</code> is a direct and clearer way to represent a list with exactly one element, reducing verbosity and improving readability.</li>
-    <li><strong>Immutability:</strong> The <code>singletonList</code> method produces an immutable list, ensuring that the list cannot be modified, which can help avoid unintended side effects.</li>
-    </ul>
-
+    <li><strong>Clearer Intent:</strong> <code>singletonList</code> makes the developer’s intention explicit — to return a list containing exactly one element. This improves code clarity compared to <code>Arrays.asList</code>, which can take multiple elements and is less specific.</li>
+    <li><strong>Immutability Guarantee:</strong> The returned list is inherently immutable, making the code safer by preventing unintended modifications and reducing the need for defensive copying in downstream logic.</li>
+    <li><strong>Reduced Overhead:</strong> <code>singletonList</code> is more lightweight than wrapping an array, especially when the element count is known to be one. This leads to more efficient and idiomatic Java code.</li>
+    <li><strong>Real-World Usage:</strong> This refactoring typically occurs in utility methods or APIs where a method must return a list interface but only a single item is expected. It simplifies maintenance while aligning with Java best practices for immutability and performance.</li>
+</ul>
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This refactoring is considered <em>context-specific</em><strong>**</strong> as it typically arises in cases where the design or API contract expects an immutable list with exactly one item.</p>
         </section>
     </main>
     <footer>
