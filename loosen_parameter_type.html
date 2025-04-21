@@ -152,10 +152,11 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Flexibility:</strong> Allows the method to handle a broader range of input types, improving its reusability across different scenarios.</li>
-    <li><strong>Enhanced Compatibility:</strong> Reduces the need for explicit type conversions or workarounds when using types that do not strictly match the original type constraint.</li>
-    <li><strong>Code Simplification:</strong> Promotes cleaner and more maintainable code by reducing overly strict type limitations that may not be necessary.</li>
-    </ul>
+    <li><strong>Increased Flexibility:</strong> Changing the parameter from <code>Class&lt;? extends TestCase&gt;</code> to <code>Class&lt;?&gt;</code> allows the method to support a broader range of input types. This is particularly useful in extensible testing frameworks where not all classes inherit from <code>TestCase</code>.</li>
+    <li><strong>Enhanced Reusability:</strong> The method becomes more general-purpose and can be reused in different testing contexts that don’t conform to the original constraint.</li>
+    <li><strong>Runtime Compatibility:</strong> Since the method uses reflection to instantiate test classes, the strict compile-time constraint offers limited practical benefits. The loosened type better aligns with how the method is actually used.</li>
+    <li><strong>Simplified API Design:</strong> Removing the unnecessary type bound reduces visual clutter and makes the method signature easier to read and maintain.</li>
+</ul>
 
 	</section>
     </main>
