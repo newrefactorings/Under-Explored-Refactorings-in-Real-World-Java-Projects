@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Collection Sort with List Sort</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Collection Sort with List Sort</h2>-->
             <pre><code>
       -  Collections.sort(this.filters, Comparator.comparing(KeyedFilter::key));
        + this.filters.sort(Comparator.comparing(KeyedFilter::key));
@@ -143,10 +143,10 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Improved Readability:</strong> Using <code>List.sort</code> directly is more concise and aligns with modern Java practices, reducing boilerplate code.</li>
-    <li><strong>Increased Clarity:</strong> The <code>List.sort</code> method explicitly operates on the list instance, making the code more intuitive and object-oriented.</li>
-    <li><strong>Modern Java Best Practices:</strong> <code>List.sort</code> was introduced in Java 8, promoting the use of instance methods over static utility methods where appropriate.</li>
-    <li><strong>Consistency:</strong> Replacing <code>Collections.sort</code> with <code>List.sort</code> ensures consistency with other instance methods, improving maintainability.</li>
+    <li><strong>Improved Readability:</strong> <code>List.sort</code> makes the sorting logic more fluent by calling the sort method directly on the list, reducing verbosity and improving clarity.</li>
+    <li><strong>Modern Java Practices:</strong> As part of the Java 8 enhancements, <code>List.sort</code> embraces object-oriented design by encouraging instance-level behavior rather than relying on static utility methods.</li>
+    <li><strong>Better IDE Support:</strong> Some modern IDEs offer better autocompletion, refactoring assistance, and linting for instance methods like <code>List.sort</code>, which can streamline development.</li>
+    <li><strong>Consistency Across Codebase:</strong> Using <code>List.sort</code> helps standardize the style of in-place sorting operations across a codebase, especially in newer code that adopts Java 8+ conventions.</li>
 </ul>
 
         
