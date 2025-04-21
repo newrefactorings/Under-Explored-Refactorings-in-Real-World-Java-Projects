@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Combine Enum with Comparator</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Combine Enum with Comparator<sup>*cs</sup></h1>
     </header>
     <nav>
         <ul>           
@@ -137,7 +137,7 @@
     </nav>
     <main>
         <section id="combine-enum">
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Combine Enum with Comparator</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Combine Enum with Comparator</h2>-->
             <pre><code> 
         - allSnapshotsSorted(allSnapshotNames, repoName, GetSnapshotsRequest.SortBy.NAME, order, includeIndexNames),
          -   GetSnapshotsRequest.SortBy.NAME,
@@ -162,7 +162,7 @@
     <li><strong>Eliminates Redundancy:</strong> Consolidates related logic into a single location, avoiding duplication of comparator implementations across different parts of the codebase.</li>
     <li><strong>Extensibility:</strong> Adding a new sorting behavior becomes straightforward by simply updating the enum, without needing to modify other parts of the code.</li>
 </ul>
-
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This is a <em>context-specific refactoring</em> that is applied in situations where sorting behavior is tightly coupled with enum constants, often seen in repository or sorting operations in data-driven systems.</p>
         </section>
     </main>
     <footer>
