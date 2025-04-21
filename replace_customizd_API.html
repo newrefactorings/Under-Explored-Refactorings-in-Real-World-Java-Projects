@@ -115,7 +115,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">RReplace Customized Methods with API</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Replace Customized Methods with API<sup>*cs</sup></h1>
     </header>
     <nav>
         <ul>           
@@ -129,7 +129,7 @@
     </nav>
     <main>
         <section>
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Customized Methods with API</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Customized Methods with API</h2>-->
             <pre><code>
      public Mono<ServerResponse> transferTo(ServerRequest request) {
 			return request.body(BodyExtractors.toParts())
@@ -150,10 +150,13 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Leverage Standard Libraries:</strong> Using an existing API method ensures robust and well-tested functionality, reducing the potential for bugs or errors in custom implementations.</li>
-    <li><strong>Improved Readability:</strong> Standard APIs are often more concise and familiar to other developers, making the code easier to read and understand.</li>
-    <li><strong>Maintenance Simplicity:</strong> Standardized methods are supported by the API provider, reducing the need for maintaining custom code over time.</li>
-    </ul>
+    <li><strong>Leverage Standard Libraries:</strong> Using well-supported API methods like <code>ofType</code> reduces the likelihood of bugs and takes advantage of established library optimizations.</li>
+    <li><strong>Improved Readability:</strong> Built-in methods convey intent more clearly and are often familiar to other developers, leading to better readability and quicker comprehension.</li>
+    <li><strong>Reduced Boilerplate:</strong> API-provided methods often abstract away common patterns (like filtering and casting), resulting in more concise and maintainable code.</li>
+    <li><strong>Maintenance Simplicity:</strong> Standard methods are maintained and tested by the framework's contributors, freeing developers from maintaining redundant custom logic.</li>
+</ul>
+
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This is a <em>context-specific refactoring</em> as it relies on replacing a verbose pattern common in reactive stream processing (i.e., filtering and casting) with the more expressive <code>ofType</code> provided by Reactor or similar frameworks.</p>
 
 	</section>
     </main>
