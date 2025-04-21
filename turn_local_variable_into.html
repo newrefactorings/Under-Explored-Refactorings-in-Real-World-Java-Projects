@@ -137,7 +137,7 @@
     </nav>
     <main>
         <section id="turn-local">
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Replace Local Variable with Field</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Replace Local Variable with Field</h2>-->
             <pre><code>    
       private final TestGenerationContext generationContext;
 
@@ -165,11 +165,11 @@
 
 <p style="font-family: 'Times New Roman', Times, serif;"><strong>Rationale:</strong></p>
 <ul style="font-family: 'Times New Roman', Times, serif;">
-    <li><strong>Reusability:</strong> Turning a local variable into a field allows it to be reused across multiple methods, reducing redundancy and improving code organization.</li>
-    <li><strong>State Retention:</strong> Fields retain their state for the lifetime of the object, making them suitable for shared resources or context required by multiple methods.</li>
-    <li><strong>Simplified Initialization:</strong> Moving initialization to a constructor centralizes setup logic, improving clarity and maintainability.</li>
-    <li><strong>Readability and Consistency:</strong> This refactoring eliminates redundant variable declarations, making the code cleaner and easier to follow.</li>
-    <li><strong>Facilitates Testing and Debugging:</strong> Class-level fields can be inspected or modified for testing purposes, making debugging more straightforward.</li>
+    <li><strong>Reusability:</strong> The variable becomes accessible across multiple methods, reducing duplication and supporting modular, maintainable code.</li>
+    <li><strong>State Retention:</strong> Fields hold their state as long as the instance exists, which is useful when the variable needs to persist or be shared across invocations.</li>
+    <li><strong>Simplified Initialization:</strong> Initializing the field in the constructor consolidates setup logic in one place, enhancing clarity.</li>
+    <li><strong>Readability and Consistency:</strong> Reduces clutter by avoiding repeated declarations and clearly signaling that the variable is a persistent part of the class's internal state.</li>
+    <li><strong>Facilitates Testing and Debugging:</strong> Class-level fields are easier to inspect, monitor, and manipulate during testing or debugging.</li>
 </ul>
 
 	</section>
