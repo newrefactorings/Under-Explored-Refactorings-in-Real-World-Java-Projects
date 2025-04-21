@@ -123,7 +123,7 @@
 <body>
     <header>
         <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
-        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Array Creation</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Array Creation<sup>*cs</sup></h1>
     </header>
     <nav>
         <ul>           
@@ -137,7 +137,7 @@
     </nav>
     <main>
         <section id="unnecessary">
-            <h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Array Creation</h2>
+            <!--<h2 style="font-family: 'Times New Roman', Times, serif;">Remove Unnecessary Array Creation</h2>-->
             <pre><code>
    public ErrorReportingRunner(Class<?> testClass, Throwable cause) {
        - this(cause, new Class<?>[] { testClass });
@@ -157,7 +157,7 @@
      <li><strong>Readability:</strong> Simplifies the method call or constructor invocation, making the code easier to understand.</li>
    
 </ul>
-
+<p style="font-family: 'Times New Roman', Times, serif;"><strong>Note:</strong> This is a <em>context-specific refactoring</em> applied when the array creation is no longer necessary due to a change in method signature or when the element passed is singular and does not require an array.</p>
         
         </section>
     </main>
